@@ -147,7 +147,7 @@ typedef const S3DX_VARIABLE_MAP_ENTRY * ( * S3DXNATIVEAIMODELGETVARIABLEMAPPROC 
         return _aimodel_##__VariableEntries ; \
     }
 
-#define S3DX_BEGIN_HANDLER_00( _aimodel_, _handler_                                                                                       ) int _aimodel_::_handler_ ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut ) {
+#define S3DX_BEGIN_HANDLER_00( _aimodel_, _handler_                                                                                       ) int _aimodel_::_handler_ ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut ) { int __iOutCount = 0 ;
 #define S3DX_BEGIN_HANDLER_01( _aimodel_, _handler_, _0_                                                                                  ) S3DX_BEGIN_HANDLER_00( _aimodel_, _handler_ ) S3DX::AIVariable _0_ = _pIn[0] ;
 #define S3DX_BEGIN_HANDLER_02( _aimodel_, _handler_, _0_, _1_                                                                             ) S3DX_BEGIN_HANDLER_01( _aimodel_, _handler_, _0_ ) S3DX::AIVariable _1_ = _pIn[1] ; 
 #define S3DX_BEGIN_HANDLER_03( _aimodel_, _handler_, _0_, _1_, _2_                                                                        ) S3DX_BEGIN_HANDLER_02( _aimodel_, _handler_, _0_, _1_ ) S3DX::AIVariable _2_ = _pIn[2] ; 
@@ -164,7 +164,25 @@ typedef const S3DX_VARIABLE_MAP_ENTRY * ( * S3DXNATIVEAIMODELGETVARIABLEMAPPROC 
 #define S3DX_BEGIN_HANDLER_14( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_             ) S3DX_BEGIN_HANDLER_13( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_ ) S3DX::AIVariable _13_ = _pIn[13] ; 
 #define S3DX_BEGIN_HANDLER_15( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_       ) S3DX_BEGIN_HANDLER_14( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_ ) S3DX::AIVariable _14_ = _pIn[14] ; 
 #define S3DX_BEGIN_HANDLER_16( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_, _15_ ) S3DX_BEGIN_HANDLER_15( _aimodel_, _handler_, _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_ ) S3DX::AIVariable _15_ = _pIn[15] ; 
-#define S3DX_END_HANDLER( ) return 0 ; }
+#define S3DX_END_HANDLER( ) return __iOutCount ; }
+#define S3DX_PUSH_HANDLER_RETURN( _variable_ ) if ( _pOut ) { _pOut[ __iOutCount++ ] = _variable_ ; }
+#define S3DX_PUSH_HANDLER_RETURNS_00(                                                                                      )
+#define S3DX_PUSH_HANDLER_RETURNS_01( _0_                                                                                  ) S3DX_PUSH_HANDLER_RETURN( _0_ )
+#define S3DX_PUSH_HANDLER_RETURNS_02( _0_, _1_                                                                             ) S3DX_PUSH_HANDLER_RETURNS_01( _0_ ) S3DX_PUSH_HANDLER_RETURN( _1_ )
+#define S3DX_PUSH_HANDLER_RETURNS_03( _0_, _1_, _2_                                                                        ) S3DX_PUSH_HANDLER_RETURNS_02( _0_, _1_ ) S3DX_PUSH_HANDLER_RETURN( _2_ )
+#define S3DX_PUSH_HANDLER_RETURNS_04( _0_, _1_, _2_, _3_                                                                   ) S3DX_PUSH_HANDLER_RETURNS_03( _0_, _1_, _2_ ) S3DX_PUSH_HANDLER_RETURN( _3_ )
+#define S3DX_PUSH_HANDLER_RETURNS_05( _0_, _1_, _2_, _3_, _4_                                                              ) S3DX_PUSH_HANDLER_RETURNS_04( _0_, _1_, _2_, _3_ ) S3DX_PUSH_HANDLER_RETURN( _4_ )
+#define S3DX_PUSH_HANDLER_RETURNS_06( _0_, _1_, _2_, _3_, _4_, _5_                                                         ) S3DX_PUSH_HANDLER_RETURNS_05( _0_, _1_, _2_, _3_, _4_ ) S3DX_PUSH_HANDLER_RETURN( _5_ )
+#define S3DX_PUSH_HANDLER_RETURNS_07( _0_, _1_, _2_, _3_, _4_, _5_, _6_                                                    ) S3DX_PUSH_HANDLER_RETURNS_06( _0_, _1_, _2_, _3_, _4_, _5_ ) S3DX_PUSH_HANDLER_RETURN( _6_ )
+#define S3DX_PUSH_HANDLER_RETURNS_08( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_                                               ) S3DX_PUSH_HANDLER_RETURNS_07( _0_, _1_, _2_, _3_, _4_, _5_, _6_ ) S3DX_PUSH_HANDLER_RETURN( _7_ )
+#define S3DX_PUSH_HANDLER_RETURNS_09( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_                                          ) S3DX_PUSH_HANDLER_RETURNS_08( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_ ) S3DX_PUSH_HANDLER_RETURN( _8_ )
+#define S3DX_PUSH_HANDLER_RETURNS_10( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_                                     ) S3DX_PUSH_HANDLER_RETURNS_09( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_ ) S3DX_PUSH_HANDLER_RETURN( _9_ )
+#define S3DX_PUSH_HANDLER_RETURNS_11( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_                               ) S3DX_PUSH_HANDLER_RETURNS_10( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_ ) S3DX_PUSH_HANDLER_RETURN( _10_ )
+#define S3DX_PUSH_HANDLER_RETURNS_12( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_                         ) S3DX_PUSH_HANDLER_RETURNS_11( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_ ) S3DX_PUSH_HANDLER_RETURN( _11_ )
+#define S3DX_PUSH_HANDLER_RETURNS_13( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_                   ) S3DX_PUSH_HANDLER_RETURNS_12( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_ ) S3DX_PUSH_HANDLER_RETURN( _12_ )
+#define S3DX_PUSH_HANDLER_RETURNS_14( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_             ) S3DX_PUSH_HANDLER_RETURNS_13( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_ ) S3DX_PUSH_HANDLER_RETURN( _13_ )
+#define S3DX_PUSH_HANDLER_RETURNS_15( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_       ) S3DX_PUSH_HANDLER_RETURNS_14( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_ ) S3DX_PUSH_HANDLER_RETURN( _14_ )
+#define S3DX_PUSH_HANDLER_RETURNS_16( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_, _15_ ) S3DX_PUSH_HANDLER_RETURNS_15( _0_, _1_, _2_, _3_, _4_, _5_, _6_, _7_, _8_, _9_, _10_, _11_, _12_, _13_, _14_ ) S3DX_PUSH_HANDLER_RETURN( _15_ )
 
 #define S3DX_BEGIN_STATE_ON_ENTER( _aimodel_, _state_ ) int _aimodel_::_state_##_onEnter ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut ) {
 #define S3DX_END_STATE_ON_ENTER( ) return 0 ; }

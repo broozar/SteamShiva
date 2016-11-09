@@ -3,7 +3,7 @@
 #define __S3DXConfig_h__
 //-----------------------------------------------------------------------------
 #ifndef S3DX_SDK_VERSION
-#define S3DX_SDK_VERSION    0x01090200  // 1.9.2.0
+#define S3DX_SDK_VERSION    0x02000000  // 2.0.0.0
 #endif
 //-----------------------------------------------------------------------------
 #if ( S3DX_SDK_VERSION >= 0x01090000 )
@@ -70,6 +70,16 @@
 #   define S3DX_AVAILABLE_0x01090200( __exp__ ) __exp__
 #else
 #   define S3DX_AVAILABLE_0x01090200( ) 
+#endif
+#if ( S3DX_SDK_VERSION >= 0x01090201 )
+#   define S3DX_AVAILABLE_0x01090201( __exp__ ) __exp__
+#else
+#   define S3DX_AVAILABLE_0x01090201( ) 
+#endif
+#if ( S3DX_SDK_VERSION >= 0x02000000 )
+#   define S3DX_AVAILABLE_0x02000000( __exp__ ) __exp__
+#else
+#   define S3DX_AVAILABLE_0x02000000( )
 #endif
 //-----------------------------------------------------------------------------
 #define S3DX_AVAILABLE( __exp__, __sdk__ ) S3DX_AVAILABLE_##__sdk__( __exp__ )

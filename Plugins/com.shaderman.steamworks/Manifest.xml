@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest>
-	<plugin name="Steamworks" version="1.35" s3dx_sdk_version="0x1090200">
-
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest version="2" >
+	<plugin name="Steamworks" version="1.38a" s3dx_sdk_version="0x2000000" >
 		<info>
-			<description>Steamworks for ShiVa</description>
+			<description>Steamworks for ShiVa 2.0</description>
 			<author>
 				<name>based on work by Shaderman, Zach, Karma and Broozar</name>
 				<mail>support@shiva-engine.com</mail>
 				<site>http://www.shiva3dstore.com</site>
 			</author>
 		</info>
-
-		<certificate></certificate>
-
+		<certificate/>
 		<files>
-			<platform type="Windows">
-				<arch type="x86_32">Steamworks_Windows.dll</arch>
-				<arch type="x86_64">Steamworks_Windows_64.dll</arch>
+			<platform type="Windows" >
+				<arch type="x86_32" >x86_32/Steamworks.dll</arch>
+				<arch type="x86_64" >x86_64/Steamworks.dll</arch>
 			</platform>
-
-			<platform type="Mac">
-				<arch type="x86_32">Steamworks_Mac.dylib</arch>
-				<arch type="x86_64">Steamworks_Mac.dylib</arch>
+			<platform type="Mac" >
+				<arch type="x86_32" >Steamworks.dylib</arch>
+				<arch type="x86_64" >Steamworks.dylib</arch>
 			</platform>
-
-			<platform type="Linux">
-				<arch type="x86_64">Steamworks_Linux.so</arch>
+			<platform type="Linux" >
+				<arch type="x86_32" >x86_32/Steamworks.so</arch>
+				<arch type="x86_64" >x86_64/Steamworks.so</arch>
 			</platform>
 		</files>
 	</plugin>

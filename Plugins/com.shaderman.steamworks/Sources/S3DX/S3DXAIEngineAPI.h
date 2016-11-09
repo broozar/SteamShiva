@@ -26,16 +26,16 @@ namespace S3DX
     public :
 
         //---------------------------------------------------------------------
-        //  Virtual destructor : provided because of inheritence. 
+        //  Virtual destructor : provided because of inheritence.
         //  May not be needed to overload it.
         //
         virtual ~AIEngineAPI ( ) { }
 
         //---------------------------------------------------------------------
-        //  Callback registering : this method will be called by the engine, 
-        //  for each available callback, at plugin initialization time. 
-        //  Once a callback is registered, it is be possible for the plugin to 
-        //  use it to call the corresponding AI engine API function. 
+        //  Callback registering : this method will be called by the engine,
+        //  for each available callback, at plugin initialization time.
+        //  Once a callback is registered, it is be possible for the plugin to
+        //  use it to call the corresponding AI engine API function.
         //
         virtual void    RegisterCallback    ( uint32 _iCallbackID, AICallback _pCallback ) = 0 ;
 
@@ -83,7 +83,7 @@ namespace S3DX
             CallbackID_animation_setPlaybackIgnoreJointsScaleTracks                         = 0xFEB349FA,
             CallbackID_animation_getPlaybackIgnoreJointsScaleTracks                         = 0x490C1481,
             CallbackID_animation_enablePlayback                                             = 0xF2D03F29,
-                    
+
             CallbackID_application_getName                                                  = 0x31C05106,
             CallbackID_application_getUniqueIdentifier                                      = 0xAFD80AE0,
             CallbackID_application_getPackDirectory                                         = 0x2F7AB6F7,
@@ -166,7 +166,8 @@ namespace S3DX
             CallbackID_application_mightBeCracked                                           = 0xF11E8373,
             CallbackID_application_flushAIEvents                                            = 0xC23E914D,
             CallbackID_application_isPluginRegistered                                       = 0xCB81ED53,
-       
+            CallbackID_application_getOffscreenRenderingSurfaceNativeHandle                 = 0xA919181D,
+
             CallbackID_cache_addFile                                                        = 0xAC10CECA,
             CallbackID_cache_addStreamFile                                                  = 0x8D35DCF2,
             CallbackID_cache_getFileStatus                                                  = 0x8F37AFA0,  // Deprecated
@@ -181,39 +182,39 @@ namespace S3DX
             CallbackID_cache_copyFileContent                                                = 0x3A2B8193,  // C/C++ addon
             CallbackID_cache_createFile                                                     = 0x8561FEF1,  // C/C++ addon
             CallbackID_cache_empty                                                          = 0x8DF0CADB,
-               
+
             CallbackID_camera_setRenderMap                                                  = 0xEE349326,
             CallbackID_camera_getRenderMapName                                              = 0x4A9369E2,
             CallbackID_camera_setFieldOfView                                                = 0xBEC04DF6,
             CallbackID_camera_getFieldOfView                                                = 0xC1DEFE81,
             CallbackID_camera_setMinViewDistance                                            = 0xEC31F8DA,
-            CallbackID_camera_getMinViewDistance                                            = 0xC93A73C4, 
-            CallbackID_camera_setMaxViewDistance                                            = 0xCB8A9FEB, 
-            CallbackID_camera_getMaxViewDistance                                            = 0xEE8114F5,                                                                                                  
-            CallbackID_camera_projectPoint                                                  = 0x42C2654E,      
-            CallbackID_camera_unprojectPoint                                                = 0x8533A523,      
-            CallbackID_camera_isPointInFrustum                                              = 0x2EA8CDEF,      
-            CallbackID_camera_isSphereInFrustum                                             = 0xFD750B3E,      
-            CallbackID_camera_setAspectRatioScale                                           = 0x48741CD8,      
-            CallbackID_camera_getAspectRatioScale                                           = 0xB25E2A30,      
-            CallbackID_camera_setMotionBlurFactor                                           = 0x1247B807,      
-            CallbackID_camera_getMotionBlurFactor                                           = 0xE86D8EEF,      
-            CallbackID_camera_setVelocityBlurFactor                                         = 0xB08ABEBF,      
-            CallbackID_camera_getVelocityBlurFactor                                         = 0xE997A8E8,      
-            CallbackID_camera_setDepthBlurFactor                                            = 0x0C10BB8D,      
-            CallbackID_camera_getDepthBlurFactor                                            = 0x291B3093,      
-            CallbackID_camera_setDepthBlurFocusRangeMin                                     = 0xC545F3E6,      
-            CallbackID_camera_getDepthBlurFocusRangeMin                                     = 0x66EF9E73,      
-            CallbackID_camera_setDepthBlurFocusRangeMax                                     = 0xF948CCBF,      
-            CallbackID_camera_getDepthBlurFocusRangeMax                                     = 0x5AE2A12A,      
-            CallbackID_camera_setDistortionFactor                                           = 0xBDB3342A,      
-            CallbackID_camera_getDistortionFactor                                           = 0x479902C2,      
-            CallbackID_camera_setDistortionAmplitude                                        = 0x6DFC4EC8,      
-            CallbackID_camera_getDistortionAmplitude                                        = 0x98AA9789,      
-            CallbackID_camera_setDistortionFrequency                                        = 0x202E6ECA,      
-            CallbackID_camera_getDistortionFrequency                                        = 0xD578B78B,      
-            CallbackID_camera_setDistortionTiling                                           = 0xFB8629A4,      
-            CallbackID_camera_getDistortionTiling                                           = 0x01AC1F4C,             
+            CallbackID_camera_getMinViewDistance                                            = 0xC93A73C4,
+            CallbackID_camera_setMaxViewDistance                                            = 0xCB8A9FEB,
+            CallbackID_camera_getMaxViewDistance                                            = 0xEE8114F5,
+            CallbackID_camera_projectPoint                                                  = 0x42C2654E,
+            CallbackID_camera_unprojectPoint                                                = 0x8533A523,
+            CallbackID_camera_isPointInFrustum                                              = 0x2EA8CDEF,
+            CallbackID_camera_isSphereInFrustum                                             = 0xFD750B3E,
+            CallbackID_camera_setAspectRatioScale                                           = 0x48741CD8,
+            CallbackID_camera_getAspectRatioScale                                           = 0xB25E2A30,
+            CallbackID_camera_setMotionBlurFactor                                           = 0x1247B807,
+            CallbackID_camera_getMotionBlurFactor                                           = 0xE86D8EEF,
+            CallbackID_camera_setVelocityBlurFactor                                         = 0xB08ABEBF,
+            CallbackID_camera_getVelocityBlurFactor                                         = 0xE997A8E8,
+            CallbackID_camera_setDepthBlurFactor                                            = 0x0C10BB8D,
+            CallbackID_camera_getDepthBlurFactor                                            = 0x291B3093,
+            CallbackID_camera_setDepthBlurFocusRangeMin                                     = 0xC545F3E6,
+            CallbackID_camera_getDepthBlurFocusRangeMin                                     = 0x66EF9E73,
+            CallbackID_camera_setDepthBlurFocusRangeMax                                     = 0xF948CCBF,
+            CallbackID_camera_getDepthBlurFocusRangeMax                                     = 0x5AE2A12A,
+            CallbackID_camera_setDistortionFactor                                           = 0xBDB3342A,
+            CallbackID_camera_getDistortionFactor                                           = 0x479902C2,
+            CallbackID_camera_setDistortionAmplitude                                        = 0x6DFC4EC8,
+            CallbackID_camera_getDistortionAmplitude                                        = 0x98AA9789,
+            CallbackID_camera_setDistortionFrequency                                        = 0x202E6ECA,
+            CallbackID_camera_getDistortionFrequency                                        = 0xD578B78B,
+            CallbackID_camera_setDistortionTiling                                           = 0xFB8629A4,
+            CallbackID_camera_getDistortionTiling                                           = 0x01AC1F4C,
             CallbackID_camera_setDistortionMapFactor                                        = 0xE60B9C1F,
             CallbackID_camera_getDistortionMapFactor                                        = 0x135D455E,
             CallbackID_camera_setDistortionMapAmplitude                                     = 0xEC3864B7,
@@ -238,7 +239,7 @@ namespace S3DX
             CallbackID_collider_isAlwaysDisabled                                            = 0xB859470F,
             CallbackID_collider_setDisabledWhenObjectInactive                               = 0xC8BDD213,
             CallbackID_collider_isDisabledWhenObjectInactive                                = 0x62D4B6D0,
-       
+
             CallbackID_debug_drawLine                                                       = 0x393077CB,
             CallbackID_debug_getTotalMemoryUsed                                             = 0xDDECC97B,
             CallbackID_debug_getLastFrameTotalDrawCalls                                     = 0x5DDDBA59,
@@ -256,7 +257,7 @@ namespace S3DX
             CallbackID_debug_dumpLoadedResources                                            = 0xF6E0A7C2,
             CallbackID_debug_setDisplayFilter                                               = 0xAA61CB5B,
 
-            CallbackID_dynamics_getBodyType                                                 = 0xAE9F6969,                                         
+            CallbackID_dynamics_getBodyType                                                 = 0xAE9F6969,
             CallbackID_dynamics_createSphereBody                                            = 0x87F0F727,
             CallbackID_dynamics_createBoxBody                                               = 0xD6D859CC,
             CallbackID_dynamics_createCapsuleBody                                           = 0xA528FD1D,
@@ -746,13 +747,13 @@ namespace S3DX
             CallbackID_light_getClipMaskBit                                                 = 0x6BF1381A,
             CallbackID_light_setDynamicShadowsViewSpaceClipRectangle                        = 0xF0F8E888,
             CallbackID_light_getDynamicShadowsViewSpaceClipRectangle                        = 0x221B6F7B,
-            
+
             CallbackID_log_message                                                          = 0x7347F97E,
             CallbackID_log_warning                                                          = 0x85B455C7,
             CallbackID_log_error                                                            = 0x7069629B,
             CallbackID_log_enable                                                           = 0xB352778A,
             CallbackID_log_isEnabled                                                        = 0xCD9D66EB,
-                    
+
             CallbackID_math_clamp                                                           = 0xD2393966,
             CallbackID_math_interpolate                                                     = 0xDA2969A9,
             CallbackID_math_sin                                                             = 0x464F82CF,
@@ -794,7 +795,7 @@ namespace S3DX
             CallbackID_math_vectorInterpolate                                               = 0x36DC1C3C,
             CallbackID_math_vectorReflect                                                   = 0x6812E3D5,
             CallbackID_math_vectorSetLength                                                 = 0x8033F48B,
-            
+
             CallbackID_mesh_getSubsetCount                                                  = 0x173F69C0,
             CallbackID_mesh_getSubsetVertexCount                                            = 0x6052CBEE,
             CallbackID_mesh_getSubsetIndexCount                                             = 0x041A3CB1,
@@ -834,6 +835,11 @@ namespace S3DX
             CallbackID_mesh_setSubsetVertexPositions                                        = 0x85030657,   // C/C++ addon
             CallbackID_mesh_setSubsetVertexNormals                                          = 0xA32F193E,   // C/C++ addon
             CallbackID_mesh_setSubsetVertexTexCoords                                        = 0x315518DF,   // C/C++ addon
+            CallbackID_mesh_sortSubsetIndexBuffersFromAxis                                  = 0x5D182306,
+            CallbackID_mesh_setSubsetValidIndexCount                                        = 0xC8E40E61,
+            CallbackID_mesh_getSubsetValidIndexCount                                        = 0xDE89EF03,
+            CallbackID_mesh_resizeSubsetVertexBuffer                                        = 0x92FAE068,
+            CallbackID_mesh_resizeSubsetIndexBuffer                                         = 0xD79AD10A,
 
             CallbackID_microphone_setRate                                                   = 0xE5C21961,
             CallbackID_microphone_enable                                                    = 0x2620D09B,
@@ -861,7 +867,7 @@ namespace S3DX
             CallbackID_music_setVolume                                                      = 0x0D13C7B9,
             CallbackID_music_getPlaybackProgress                                            = 0xD3540E59,
             CallbackID_music_playAdditional                                                 = 0x0ADED058,
-                    
+
             CallbackID_navigation_setTargetNode                                             = 0x73239262,
             CallbackID_navigation_setAcceleration                                           = 0x215C1BC6,
             CallbackID_navigation_getAcceleration                                           = 0xEF42E1EA,
@@ -990,7 +996,7 @@ namespace S3DX
             CallbackID_object_setReceivesCustomAIEventsWhenInactive                         = 0x0D7C3DA6,
             CallbackID_object_getReceivesCustomAIEventsWhenInactive                         = 0x011337A4,
             CallbackID_object_enableAIModel                                                 = 0x3C356EA3,
-                                                                
+
             CallbackID_pixelmap_getResourceHandle                                           = 0xD27289FB,
             CallbackID_pixelmap_getWidth                                                    = 0x16E7B355,
             CallbackID_pixelmap_getHeight                                                   = 0x450780DB,
@@ -1019,6 +1025,8 @@ namespace S3DX
             CallbackID_pixelmap_drawLine                                                    = 0xF963E0E3,
             CallbackID_pixelmap_drawRectangle                                               = 0xAC95AAE1,
             CallbackID_pixelmap_saveToTexture                                               = 0x64D2909B,
+            CallbackID_pixelmap_newInstance                                                 = 0xD87C9618,
+            CallbackID_pixelmap_resize                                                      = 0x519A2D4E,
 
             CallbackID_projector_setColor                                                   = 0xB39D8A1A,
             CallbackID_projector_getColor                                                   = 0x4B6CB5CB,
@@ -1304,6 +1312,8 @@ namespace S3DX
             CallbackID_sfx_getTrailCount                                                    = 0x5E939406,
             CallbackID_sfx_setTrailAnchor0At                                                = 0x30BF09F0,
             CallbackID_sfx_setTrailAnchor1At                                                = 0x317D63C7,
+            CallbackID_sfx_setTrailOpacityAt                                                = 0xB9740CA2,
+            CallbackID_sfx_getTrailOpacityAt                                                = 0xDD2DB210,
             CallbackID_sfx_startTrailAt                                                     = 0x34394A32,
             CallbackID_sfx_pauseTrailAt                                                     = 0x1529F42F,
             CallbackID_sfx_stopTrailAt                                                      = 0x5EF024F9,
@@ -1441,6 +1451,12 @@ namespace S3DX
             CallbackID_shape_setCurveEndOpacity                                             = 0x335F82EA,
             CallbackID_shape_getCurveStartColor                                             = 0xD637AB71,
             CallbackID_shape_getCurveEndColor                                               = 0x9812BFC2,
+            CallbackID_shape_setCurveStyle                                                  = 0x63139165,
+            CallbackID_shape_getCurveStyle                                                  = 0x17AD5D29,
+            CallbackID_shape_setCurveStyleOption                                            = 0xE14818C7,
+            CallbackID_shape_getCurveStyleOption                                            = 0x1B622E2F,
+            CallbackID_shape_setCurveOption                                                 = 0xCA69B308,
+            CallbackID_shape_getCurveOption                                                 = 0xB577007F,
             CallbackID_shape_evaluateCurve                                                  = 0x6C0F2586,
             CallbackID_shape_getCurveLength                                                 = 0xEE8C9E7D,
             CallbackID_shape_setMeshOption                                                  = 0xAADE5E15,
@@ -1477,7 +1493,7 @@ namespace S3DX
             CallbackID_sound_getSpatializationGain                                          = 0xD06788E2,
 
             CallbackID_string_isEmpty                                                       = 0x15025591,
-            CallbackID_string_getLength                                                     = 0x0B56F67D,      
+            CallbackID_string_getLength                                                     = 0x0B56F67D,
             CallbackID_string_getByte                                                       = 0xEF7286D4,
             CallbackID_string_format                                                        = 0xBD71835C,
             CallbackID_string_replace                                                       = 0x784F3D2E,
@@ -1816,6 +1832,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  getAudioListenerObject                                  ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  setUseAverageFrameTime                                  ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getUseAverageFrameTime                                  ; , 0x01090200 )
+            S3DX_AVAILABLE( AICallback  getOffscreenRenderingSurfaceNativeHandle                ; , 0x02000000 )
         } ;
 
         struct CacheCallbacks
@@ -1835,39 +1852,39 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  createFile                                              ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  empty                                                   ; , 0x01090000 )
         } ;
-               
+
         struct CameraCallbacks
         {
             S3DX_AVAILABLE( AICallback  setFieldOfView                                          ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  getFieldOfView                                          ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  setMinViewDistance                                      ; , 0x01090000 )
-            S3DX_AVAILABLE( AICallback  getMinViewDistance                                      ; , 0x01090000 ) 
-            S3DX_AVAILABLE( AICallback  setMaxViewDistance                                      ; , 0x01090000 ) 
-            S3DX_AVAILABLE( AICallback  getMaxViewDistance                                      ; , 0x01090000 )                                                                                                  
-            S3DX_AVAILABLE( AICallback  projectPoint                                            ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  unprojectPoint                                          ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  isPointInFrustum                                        ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  isSphereInFrustum                                       ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setAspectRatioScale                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getAspectRatioScale                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setMotionBlurFactor                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getMotionBlurFactor                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setVelocityBlurFactor                                   ; , 0x01090000 )   
-            S3DX_AVAILABLE( AICallback  getVelocityBlurFactor                                   ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDepthBlurFactor                                      ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDepthBlurFactor                                      ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDepthBlurFocusRangeMin                               ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDepthBlurFocusRangeMin                               ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDepthBlurFocusRangeMax                               ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDepthBlurFocusRangeMax                               ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDistortionFactor                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDistortionFactor                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDistortionAmplitude                                  ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDistortionAmplitude                                  ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDistortionFrequency                                  ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDistortionFrequency                                  ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  setDistortionTiling                                     ; , 0x01090000 )      
-            S3DX_AVAILABLE( AICallback  getDistortionTiling                                     ; , 0x01090000 )      
+            S3DX_AVAILABLE( AICallback  getMinViewDistance                                      ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setMaxViewDistance                                      ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getMaxViewDistance                                      ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  projectPoint                                            ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  unprojectPoint                                          ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  isPointInFrustum                                        ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  isSphereInFrustum                                       ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setAspectRatioScale                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getAspectRatioScale                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setMotionBlurFactor                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getMotionBlurFactor                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setVelocityBlurFactor                                   ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getVelocityBlurFactor                                   ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDepthBlurFactor                                      ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDepthBlurFactor                                      ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDepthBlurFocusRangeMin                               ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDepthBlurFocusRangeMin                               ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDepthBlurFocusRangeMax                               ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDepthBlurFocusRangeMax                               ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDistortionFactor                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDistortionFactor                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDistortionAmplitude                                  ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDistortionAmplitude                                  ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDistortionFrequency                                  ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDistortionFrequency                                  ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  setDistortionTiling                                     ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  getDistortionTiling                                     ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  setDistortionMapFactor                                  ; , 0x01090005 )
             S3DX_AVAILABLE( AICallback  getDistortionMapFactor                                  ; , 0x01090005 )
             S3DX_AVAILABLE( AICallback  setDistortionMapAmplitude                               ; , 0x01090005 )
@@ -1888,7 +1905,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  setRenderMap                                            ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getRenderMapName                                        ; , 0x01090200 )
         } ;
-       
+
         struct ColliderCallbacks
         {
             S3DX_AVAILABLE( AICallback  create                                                  ; , 0x01090200 )
@@ -1921,7 +1938,7 @@ namespace S3DX
 
         struct DynamicsCallbacks
         {
-            S3DX_AVAILABLE( AICallback  getBodyType                                             ; , 0x01090000 )                                        
+            S3DX_AVAILABLE( AICallback  getBodyType                                             ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  createSphereBody                                        ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  createBoxBody                                           ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  createCapsuleBody                                       ; , 0x01090000 )
@@ -2031,7 +2048,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  getSubObjectCount                                       ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  getSubObjectAt                                          ; , 0x01090000 )
         } ;
-        
+
         struct HashtableCallbacks
         {
             S3DX_AVAILABLE( AICallback  isEmpty                                                 ; , 0x01090000 )
@@ -2397,7 +2414,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  getTimer                                                ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getTimerTag                                             ; , 0x01090200 )
         } ;
-               
+
         struct InputCallbacks
         {
             S3DX_AVAILABLE( AICallback  setJoypadVibrationsMagnitude                            ; , 0x01090000 )
@@ -2412,7 +2429,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  getJoypadBatteryLevel                                   ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  isJoypadExtensionAttached                               ; , 0x01090200 )
         } ;
-               
+
         struct LightCallbacks
         {
             S3DX_AVAILABLE( AICallback  getType                                                 ; , 0x01090000 )
@@ -2427,7 +2444,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  setDynamicShadowsViewSpaceClipRectangle                 ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getDynamicShadowsViewSpaceClipRectangle                 ; , 0x01090200 )
         } ;
-                 
+
         struct LogCallbacks
         {
             S3DX_AVAILABLE( AICallback  message                                                 ; , 0x01090000 )
@@ -2435,8 +2452,8 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  error                                                   ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  enable                                                  ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  isEnabled                                               ; , 0x01090200 )
-        } ;            
-        
+        } ;
+
         struct MathCallbacks
         {
             S3DX_AVAILABLE( AICallback  clamp                                                   ; , 0x01090000 )
@@ -2481,7 +2498,7 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  vectorReflect                                           ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  vectorSetLength                                         ; , 0x01090000 )
         } ;
-        
+
         struct MeshCallbacks
         {
             S3DX_AVAILABLE( AICallback  getSubsetCount                                          ; , 0x01090000 )
@@ -2523,6 +2540,11 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  setSubsetVertexNormals                                  ; , 0x01090101 )
             S3DX_AVAILABLE( AICallback  setSubsetBoundingBox                                    ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  setSubsetVertexTexCoords                                ; , 0x01090200 )
+            S3DX_AVAILABLE( AICallback  sortSubsetIndexBuffersFromAxis                          ; , 0x01090201 )
+            S3DX_AVAILABLE( AICallback  setSubsetValidIndexCount                                ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  getSubsetValidIndexCount                                ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  resizeSubsetVertexBuffer                                ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  resizeSubsetIndexBuffer                                 ; , 0x02000000 )
         } ;
 
         struct MicrophoneCallbacks
@@ -2726,6 +2748,8 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  drawLine                                                ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  drawRectangle                                           ; , 0x01090000 )
             S3DX_AVAILABLE( AICallback  saveToTexture                                           ; , 0x01090000 )
+            S3DX_AVAILABLE( AICallback  newInstance                                             ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  resize                                                  ; , 0x02000000 )
         } ;
 
         struct ProjectorCallbacks
@@ -3060,6 +3084,9 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  getParticleTurbulenceFieldStrength                      ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  setParticleTurbulenceFieldFrequency                     ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getParticleTurbulenceFieldFrequency                     ; , 0x01090200 )
+            S3DX_AVAILABLE( AICallback  setTrailOpacityAt                                       ; , 0x01090201 )
+            S3DX_AVAILABLE( AICallback  getTrailOpacityAt                                       ; , 0x01090201 )
+
         } ;
 
         struct ShapeCallbacks
@@ -3184,6 +3211,12 @@ namespace S3DX
             S3DX_AVAILABLE( AICallback  overrideMeshSubsetMaterialFresnel                       ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  getMeshSubsetMaterialFresnelOverride                    ; , 0x01090200 )
             S3DX_AVAILABLE( AICallback  overrideMeshMaterialFresnel                             ; , 0x01090200 )
+            S3DX_AVAILABLE( AICallback  setCurveStyle                                           ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  getCurveStyle                                           ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  setCurveStyleOption                                     ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  getCurveStyleOption                                     ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  setCurveOption                                          ; , 0x02000000 )
+            S3DX_AVAILABLE( AICallback  getCurveOption                                          ; , 0x02000000 )
         } ;
 
         struct SoundCallbacks
@@ -3528,7 +3561,7 @@ namespace S3DX
             const AIVariable        kOptionShadersQuality                                   ;
             const AIVariable        kOptionViewportRotation                                 ;
             const AIVariable        kOptionAutomaticVirtualKeyboard                         ;
-            const AIVariable        kOptionFullscreenWidth                                  ;                            
+            const AIVariable        kOptionFullscreenWidth                                  ;
             const AIVariable        kOptionFullscreenHeight                                 ;
             const AIVariable        kOptionDynamicShadowsBufferCount                        ;
             const AIVariable        kOptionDynamicShadowsBufferSize                         ;
@@ -3598,6 +3631,18 @@ namespace S3DX
             const AIVariable        kOptionParticlesEnabled                                 ; // 1.9.2.0
             const AIVariable        kOptionBakeAnimations                                   ; // 1.9.2.0
             const AIVariable        kOptionMaxParticlesPerEmitter                           ; // 1.9.2.0
+            const AIVariable        kStereoscopic3DModeSideBySideNoStretch                  ; // 2.0.0.0
+            const AIVariable        kStereoscopic3DModeOverUnderNoStretch                   ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCoefficient0             ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCoefficient1             ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCoefficient2             ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCoefficient3             ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionScaleX                   ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionScaleY                   ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCenterOffsetX            ; // 2.0.0.0
+            const AIVariable        kOptionStereoscopic3DDistortionCenterOffsetY            ; // 2.0.0.0
+            const AIVariable        kOptionOffscreenRenderingRetainedBacking                ; // 2.0.0.0
+
 
             ApplicationPackage                                      (    ):
             kStatusSaving                                           (  3 ),
@@ -3682,7 +3727,18 @@ namespace S3DX
             kOptionMeshSkinningMaxJointsPerVertex                   ( 59 ), // 1.9.2.0
             kOptionParticlesEnabled                                 ( 60 ), // 1.9.2.0
             kOptionBakeAnimations                                   ( 61 ), // 1.9.2.0
-            kOptionMaxParticlesPerEmitter                           ( 62 )  // 1.9.2.0
+            kOptionMaxParticlesPerEmitter                           ( 62 ), // 1.9.2.0
+            kStereoscopic3DModeSideBySideNoStretch                  (  5 ), // 2.0.0.0
+            kStereoscopic3DModeOverUnderNoStretch                   (  6 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCoefficient0             ( 63 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCoefficient1             ( 64 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCoefficient2             ( 65 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCoefficient3             ( 66 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionScaleX                   ( 67 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionScaleY                   ( 68 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCenterOffsetX            ( 69 ), // 2.0.0.0
+            kOptionStereoscopic3DDistortionCenterOffsetY            ( 70 ), // 2.0.0.0
+            kOptionOffscreenRenderingRetainedBacking                ( 74 )  // 2.0.0.0
             { }
 
             // Functions
@@ -3695,6 +3751,7 @@ namespace S3DX
             inline AIVariable       createUser                                          ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.createUser ( 0, NULL, &vOut ) ; return vOut ; }
             inline void             destroyUser                                         ( const AIVariable& hUser ) const { S3DX_DECLARE_VIN_01( hUser ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.destroyUser ( 1, vIn, NULL ) ; }
             inline AIVariable       getCurrentUser                                      ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getCurrentUser ( 0, NULL, &vOut ) ; return vOut ; }
+            inline AIVariable       getDefaultUser                                      ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getCurrentUser ( 0, NULL, &vOut ) ; return vOut ; }
             inline AIVariable       getCurrentUserScene                                 ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getCurrentUserScene ( 0, NULL, &vOut ) ; return vOut ; }
             inline AIVariable       getCurrentUserSceneName                             ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getCurrentUserSceneName ( 0, NULL, &vOut ) ; return vOut ; }
             inline AIVariable       setCurrentUserScene                                 ( const AIVariable& sName ) const { S3DX_DECLARE_VIN_01( sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.setCurrentUserScene ( 1, vIn, &vOut ) ; return vOut ; }
@@ -3704,7 +3761,7 @@ namespace S3DX
             inline AIVariable       setCurrentUserAIVariable                            ( const AIVariable& sAIModel, const AIVariable& sVariable, const AIVariable& vValue ) const { S3DX_DECLARE_VIN_03( sAIModel, sVariable, vValue ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.setCurrentUserAIVariable ( 3, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       getCurrentUserAIState                               ( const AIVariable& sAIModel ) const { S3DX_DECLARE_VIN_01( sAIModel ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getCurrentUserAIState ( 1, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       playOverlayExternalMovie                            ( const AIVariable& sPath ) const { S3DX_DECLARE_VIN_01( sPath ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.playOverlayExternalMovie ( 1, vIn, &vOut ) ; return vOut ; }
-            inline AIVariable       playOverlayMovie                                    ( const AIVariable& sName ) const { S3DX_DECLARE_VIN_01( sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.playOverlayMovie ( 1, vIn, &vOut ) ; return vOut ; } 
+            inline AIVariable       playOverlayMovie                                    ( const AIVariable& sName ) const { S3DX_DECLARE_VIN_01( sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.playOverlayMovie ( 1, vIn, &vOut ) ; return vOut ; }
             inline void             stopOverlayMovie                                    ( ) const { S3DX_MODULE_GUID::__pS3DXEAPIMI->application.stopOverlayMovie ( 0, NULL, NULL ) ; }
             inline AIVariable       isOverlayMoviePlaying                               ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.isOverlayMoviePlaying ( 0, NULL, &vOut ) ; return vOut ; }
             inline AIVariable       startCurrentUserScenePreloading                     ( const AIVariable& sName ) const { S3DX_DECLARE_VIN_01( sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.startCurrentUserScenePreloading ( 1, vIn, &vOut ) ; return vOut ; }
@@ -3774,6 +3831,7 @@ namespace S3DX
             inline AIVariable       getAudioListenerObject                              ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getAudioListenerObject ( 0, NULL, &vOut ) ; return vOut ; }
             inline void             setUseAverageFrameTime                              ( const AIVariable& bUse ) const { S3DX_DECLARE_VIN_01( bUse ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.setUseAverageFrameTime ( 1, vIn, NULL ) ; }
             inline AIVariable       getUseAverageFrameTime                              ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getUseAverageFrameTime ( 0, NULL, &vOut ) ; return vOut ; }
+            inline AIVariable       getOffscreenRenderingSurfaceNativeHandle            ( const AIVariable& nDisplay, const AIVariable& nRoute ) const { S3DX_DECLARE_VIN_02( nDisplay, nRoute ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->application.getOffscreenRenderingSurfaceNativeHandle ( 2, vIn, &vOut ) ; return vOut ; }
         } ;
 
         struct CachePackage
@@ -5064,7 +5122,7 @@ namespace S3DX
         } ;
 
         struct LightPackage
-        {    
+        {
             // Constants
             //
             const AIVariable        kTypePoint          ;
@@ -5181,21 +5239,21 @@ namespace S3DX
             inline AIVariable       evaluateBSpline                                     ( const AIVariable& nValue1, const AIVariable& nValue2, const AIVariable& nValue3, const AIVariable& nValue4, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_05( nValue1, nValue2, nValue3, nValue4, nFactor ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.evaluateBSpline ( 5, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       evaluateBezier                                      ( const AIVariable& nValue1, const AIVariable& nValue2, const AIVariable& nValue3, const AIVariable& nValue4, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_05( nValue1, nValue2, nValue3, nValue4, nFactor ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.evaluateBezier ( 5, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       evaluateCatmullRom                                  ( const AIVariable& nValue1, const AIVariable& nValue2, const AIVariable& nValue3, const AIVariable& nValue4, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_05( nValue1, nValue2, nValue3, nValue4, nFactor ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.evaluateCatmullRom ( 5, vIn, &vOut ) ; return vOut ; }
-            inline AIVariables<3>   computeRayPlaneIntersection                         ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nPlaneA, const AIVariable& nPlaneB, const AIVariable& nPlaneC, const AIVariable& nPlaneD ) const { S3DX_DECLARE_VIN_11( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nPlaneA, nPlaneB, nPlaneC, nPlaneD ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRayPlaneIntersection ( 11, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   computeRaySphereIntersection                        ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nSphereX, const AIVariable& nSphereY, const AIVariable& nSphereZ, const AIVariable& nSphereR ) const { S3DX_DECLARE_VIN_11( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nSphereX, nSphereY, nSphereZ, nSphereR ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRaySphereIntersection ( 11, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   computeRayAABoxIntersection                         ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nBoxMinX, const AIVariable& nBoxMinY, const AIVariable& nBoxMinZ, const AIVariable& nBoxMaxX, const AIVariable& nBoxMaxY, const AIVariable& nBoxMaxZ ) const { S3DX_DECLARE_VIN_13( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nBoxMinX, nBoxMinY, nBoxMinZ, nBoxMaxX, nBoxMaxY, nBoxMaxZ ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRayAABoxIntersection ( 13, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorAdd                                           ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorAdd ( 6, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorSubtract                                      ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorSubtract ( 6, vIn, vOut ) ; return vOut ; } 
-            inline AIVariable       vectorDotProduct                                    ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorDotProduct ( 6, vIn, &vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorCrossProduct                                  ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorCrossProduct ( 6, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorNormalize                                     ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z ) const { S3DX_DECLARE_VIN_03( nV1x, nV1y, nV1z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorNormalize ( 3, vIn, vOut ) ; return vOut ; } 
+            inline AIVariables<3>   computeRayPlaneIntersection                         ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nPlaneA, const AIVariable& nPlaneB, const AIVariable& nPlaneC, const AIVariable& nPlaneD ) const { S3DX_DECLARE_VIN_11( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nPlaneA, nPlaneB, nPlaneC, nPlaneD ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRayPlaneIntersection ( 11, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   computeRaySphereIntersection                        ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nSphereX, const AIVariable& nSphereY, const AIVariable& nSphereZ, const AIVariable& nSphereR ) const { S3DX_DECLARE_VIN_11( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nSphereX, nSphereY, nSphereZ, nSphereR ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRaySphereIntersection ( 11, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   computeRayAABoxIntersection                         ( const AIVariable& nRayPntX, const AIVariable& nRayPntY, const AIVariable& nRayPntZ, const AIVariable& nRayDirX, const AIVariable& nRayDirY, const AIVariable& nRayDirZ, const AIVariable& nRayLength, const AIVariable& nBoxMinX, const AIVariable& nBoxMinY, const AIVariable& nBoxMinZ, const AIVariable& nBoxMaxX, const AIVariable& nBoxMaxY, const AIVariable& nBoxMaxZ ) const { S3DX_DECLARE_VIN_13( nRayPntX, nRayPntY, nRayPntZ, nRayDirX, nRayDirY, nRayDirZ, nRayLength, nBoxMinX, nBoxMinY, nBoxMinZ, nBoxMaxX, nBoxMaxY, nBoxMaxZ ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.computeRayAABoxIntersection ( 13, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorAdd                                           ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorAdd ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorSubtract                                      ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorSubtract ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariable       vectorDotProduct                                    ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorDotProduct ( 6, vIn, &vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorCrossProduct                                  ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorCrossProduct ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorNormalize                                     ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z ) const { S3DX_DECLARE_VIN_03( nV1x, nV1y, nV1z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorNormalize ( 3, vIn, vOut ) ; return vOut ; }
             inline AIVariables<3>   vectorNormalize                                     ( const AIVariables<3>& vVector ) const { AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorNormalize ( 3, vVector, vOut ) ; return vOut ; } // C++ addon, for convenience
-            inline AIVariable       vectorLength                                        ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z ) const { S3DX_DECLARE_VIN_03( nV1x, nV1y, nV1z ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorLength ( 3, vIn, &vOut ) ; return vOut ; } 
+            inline AIVariable       vectorLength                                        ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z ) const { S3DX_DECLARE_VIN_03( nV1x, nV1y, nV1z ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorLength ( 3, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       vectorLength                                        ( const AIVariables<3>& vVector ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorLength ( 3, vVector, &vOut ) ; return vOut ; } // C++ addon, for convenience
-            inline AIVariables<3>   vectorScale                                         ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nScale ) const { S3DX_DECLARE_VIN_04( nV1x, nV1y, nV1z, nScale ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorScale ( 4, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorInterpolate                                   ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_07( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z, nFactor ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorInterpolate ( 7, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorReflect                                       ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorReflect ( 6, vIn, vOut ) ; return vOut ; } 
-            inline AIVariables<3>   vectorSetLength                                     ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nLength ) const { S3DX_DECLARE_VIN_04( nV1x, nV1y, nV1z, nLength ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorSetLength ( 4, vIn, vOut ) ; return vOut ; } 
+            inline AIVariables<3>   vectorScale                                         ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nScale ) const { S3DX_DECLARE_VIN_04( nV1x, nV1y, nV1z, nScale ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorScale ( 4, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorInterpolate                                   ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_07( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z, nFactor ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorInterpolate ( 7, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorReflect                                       ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nV2x, const AIVariable& nV2y, const AIVariable& nV2z ) const { S3DX_DECLARE_VIN_06( nV1x, nV1y, nV1z, nV2x, nV2y, nV2z ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorReflect ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<3>   vectorSetLength                                     ( const AIVariable& nV1x, const AIVariable& nV1y, const AIVariable& nV1z, const AIVariable& nLength ) const { S3DX_DECLARE_VIN_04( nV1x, nV1y, nV1z, nLength ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->math.vectorSetLength ( 4, vIn, vOut ) ; return vOut ; }
         } ;
 
         struct MeshPackage
@@ -5218,8 +5276,8 @@ namespace S3DX
             //
             inline AIVariable       getSubsetCount                                      ( const AIVariable& hMesh ) const { S3DX_DECLARE_VIN_01( hMesh ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetCount ( 1, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       getSubsetVertexCount                                ( const AIVariable& hMesh, const AIVariable& nSubset ) const { S3DX_DECLARE_VIN_02( hMesh, nSubset ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetVertexCount ( 2, vIn, &vOut ) ; return vOut ; }
-            inline AIVariable       getSubsetIndexCount                                 ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nLOD ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetIndexCount ( 3, vIn, &vOut ) ; return vOut ; } 
-            inline AIVariable       getSubsetLODCount                                   ( const AIVariable& hMesh, const AIVariable& nSubset ) const { S3DX_DECLARE_VIN_02( hMesh, nSubset ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetLODCount ( 2, vIn, &vOut ) ; return vOut ; } 
+            inline AIVariable       getSubsetIndexCount                                 ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nLOD ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetIndexCount ( 3, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       getSubsetLODCount                                   ( const AIVariable& hMesh, const AIVariable& nSubset ) const { S3DX_DECLARE_VIN_02( hMesh, nSubset ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetLODCount ( 2, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       addSubset                                           ( const AIVariable& hMesh ) const { S3DX_DECLARE_VIN_01( hMesh ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.addSubset ( 1, vIn, &vOut ) ; return vOut ; }
             inline void             removeSubset                                        ( const AIVariable& hMesh, const AIVariable& nSubset ) const { S3DX_DECLARE_VIN_02( hMesh, nSubset ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.removeSubset ( 2, vIn, NULL ) ; }
             inline AIVariable       createSubsetVertexBuffer                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nVertexCount ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nVertexCount ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.createSubsetVertexBuffer ( 3, vIn, &vOut ) ; return vOut ; }
@@ -5228,9 +5286,9 @@ namespace S3DX
             inline AIVariable       createSubsetIndexBuffer                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& nIndexCount, const AIVariable& b32bpi ) const { S3DX_DECLARE_VIN_05( hMesh, nSubset, nLOD, nIndexCount, b32bpi ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.createSubsetIndexBuffer ( 5, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       createSubsetIndexBuffer                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& nIndexCount, const AIVariable& b32bpi, const AIVariable& nLODThreshold ) const { S3DX_DECLARE_VIN_06( hMesh, nSubset, nLOD, nIndexCount, b32bpi, nLODThreshold ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.createSubsetIndexBuffer ( 6, vIn, &vOut ) ; return vOut ; }
             inline void             destroySubsetIndexBuffer                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nLOD ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.destroySubsetIndexBuffer ( 3, vIn, NULL ) ; }
-            inline AIVariable       lockSubsetVertexBuffer                              ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& kLockMode ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, kLockMode ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.lockSubsetVertexBuffer ( 3, vIn, &vOut ) ; return vOut ; } 
+            inline AIVariable       lockSubsetVertexBuffer                              ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& kLockMode ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, kLockMode ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.lockSubsetVertexBuffer ( 3, vIn, &vOut ) ; return vOut ; }
             inline void             unlockSubsetVertexBuffer                            ( const AIVariable& hMesh, const AIVariable& nSubset ) const { S3DX_DECLARE_VIN_02( hMesh, nSubset ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.unlockSubsetVertexBuffer ( 2, vIn, NULL ) ; }
-            inline AIVariable       lockSubsetIndexBuffer                               ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& kLockMode ) const { S3DX_DECLARE_VIN_04( hMesh, nSubset, nLOD, kLockMode ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.lockSubsetIndexBuffer ( 4, vIn, &vOut ) ; return vOut ; } 
+            inline AIVariable       lockSubsetIndexBuffer                               ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& kLockMode ) const { S3DX_DECLARE_VIN_04( hMesh, nSubset, nLOD, kLockMode ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.lockSubsetIndexBuffer ( 4, vIn, &vOut ) ; return vOut ; }
             inline void             unlockSubsetIndexBuffer                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nLOD ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.unlockSubsetIndexBuffer ( 3, vIn, NULL ) ; }
             inline void             setSubsetVertexPosition                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nVertex, const AIVariable& x, const AIVariable& y, const AIVariable& z ) const { S3DX_DECLARE_VIN_06( hMesh, nSubset, nVertex, x, y, z ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.setSubsetVertexPosition ( 6, vIn, NULL ) ; }
             inline AIVariables<3>   getSubsetVertexPosition                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nVertex ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nVertex ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetVertexPosition ( 3, vIn, vOut ) ; return vOut ; }
@@ -5257,6 +5315,11 @@ namespace S3DX
             inline void             setSubsetVertexNormals                              ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nStartVertex, const AIVariable& nVertexCount, const AIVariable& nVertexStride, const AIVariable& pVertexList ) const { S3DX_DECLARE_VIN_06( hMesh, nSubset, nStartVertex, nVertexCount, nVertexStride, pVertexList ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.setSubsetVertexNormals ( 6, vIn, NULL ) ; }
             inline void             setSubsetBoundingBox                                ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nMinX, const AIVariable& nMinY, const AIVariable& nMinZ, const AIVariable& nMaxX, const AIVariable& nMaxY, const AIVariable& nMaxZ ) const { S3DX_DECLARE_VIN_08( hMesh, nSubset, nMinX, nMinY, nMinZ, nMaxX, nMaxY, nMaxZ ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.setSubsetBoundingBox ( 8, vIn, NULL ) ; }
             inline void             setSubsetVertexTexCoords                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nSet, const AIVariable& nStartVertex, const AIVariable& nVertexCount, const AIVariable& nVertexStride, const AIVariable& pVertexList ) const { S3DX_DECLARE_VIN_07( hMesh, nSubset, nSet, nStartVertex, nVertexCount, nVertexStride, pVertexList ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.setSubsetVertexTexCoords ( 7, vIn, NULL ) ; }
+            inline void             sortSubsetIndexBuffersFromAxis                      ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nAxisX, const AIVariable& nAxisY, const AIVariable& nAxisZ ) const { S3DX_DECLARE_VIN_05( hMesh, nSubset, nAxisX, nAxisY, nAxisZ ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.sortSubsetIndexBuffersFromAxis ( 5, vIn, NULL ) ; }
+            inline void             setSubsetValidIndexCount                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& nIndexCount ) const { S3DX_DECLARE_VIN_04( hMesh, nSubset, nLOD, nIndexCount ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.setSubsetValidIndexCount ( 4, vIn, NULL ) ; }
+            inline AIVariable       getSubsetValidIndexCount                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nLOD ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.getSubsetValidIndexCount ( 3, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       resizeSubsetVertexBuffer                            ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nVertexCount ) const { S3DX_DECLARE_VIN_03( hMesh, nSubset, nVertexCount ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.resizeSubsetVertexBuffer ( 3, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       resizeSubsetIndexBuffer                             ( const AIVariable& hMesh, const AIVariable& nSubset, const AIVariable& nLOD, const AIVariable& nIndexCount ) const { S3DX_DECLARE_VIN_04( hMesh, nSubset, nLOD, nIndexCount ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->mesh.resizeSubsetIndexBuffer ( 4, vIn, &vOut ) ; return vOut ; }
         } ;
 
         struct MicrophonePackage
@@ -5547,24 +5610,24 @@ namespace S3DX
             inline void             postEvent                                           ( const AIVariable& hObject, const AIVariable& nDelay, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15 ) const { S3DX_DECLARE_VIN_20( hObject, nDelay, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.postEvent ( 20, vIn, NULL ) ; }
             inline void             postEvent                                           ( const AIVariable& hObject, const AIVariable& nDelay, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15, const AIVariable& vParam16 ) const { S3DX_DECLARE_VIN_21( hObject, nDelay, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15, vParam16 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.postEvent ( 21, vIn, NULL ) ; }
 
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent ) const { S3DX_DECLARE_VIN_03( hObject, sAIModel, sEvent ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 3, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0 ) const { S3DX_DECLARE_VIN_04( hObject, sAIModel, sEvent, vParam0 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 4, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1 ) const { S3DX_DECLARE_VIN_05( hObject, sAIModel, sEvent, vParam0, vParam1 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 5, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2 ) const { S3DX_DECLARE_VIN_06( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 6, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3 ) const { S3DX_DECLARE_VIN_07( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 7, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4 ) const { S3DX_DECLARE_VIN_08( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 8, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5 ) const { S3DX_DECLARE_VIN_09( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 9, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6 ) const { S3DX_DECLARE_VIN_10( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 10, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7 ) const { S3DX_DECLARE_VIN_11( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 11, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8 ) const { S3DX_DECLARE_VIN_12( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 12, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9 ) const { S3DX_DECLARE_VIN_13( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 13, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10 ) const { S3DX_DECLARE_VIN_14( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 14, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11 ) const { S3DX_DECLARE_VIN_15( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 15, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12 ) const { S3DX_DECLARE_VIN_16( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 16, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13 ) const { S3DX_DECLARE_VIN_17( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 17, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14 ) const { S3DX_DECLARE_VIN_18( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 18, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15 ) const { S3DX_DECLARE_VIN_19( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 19, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15, const AIVariable& vParam16 ) const { S3DX_DECLARE_VIN_20( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15, vParam16 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 20, vIn, NULL ) ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent ) const { S3DX_DECLARE_VIN_03( hObject, sAIModel, sEvent ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 3, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0 ) const { S3DX_DECLARE_VIN_04( hObject, sAIModel, sEvent, vParam0 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 4, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1 ) const { S3DX_DECLARE_VIN_05( hObject, sAIModel, sEvent, vParam0, vParam1 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 5, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2 ) const { S3DX_DECLARE_VIN_06( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3 ) const { S3DX_DECLARE_VIN_07( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 7, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4 ) const { S3DX_DECLARE_VIN_08( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 8, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5 ) const { S3DX_DECLARE_VIN_09( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 9, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6 ) const { S3DX_DECLARE_VIN_10( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 10, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7 ) const { S3DX_DECLARE_VIN_11( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 11, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8 ) const { S3DX_DECLARE_VIN_12( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 12, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9 ) const { S3DX_DECLARE_VIN_13( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 13, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10 ) const { S3DX_DECLARE_VIN_14( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 14, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11 ) const { S3DX_DECLARE_VIN_15( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 15, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12 ) const { S3DX_DECLARE_VIN_16( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 16, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13 ) const { S3DX_DECLARE_VIN_17( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 17, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14 ) const { S3DX_DECLARE_VIN_18( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 18, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15 ) const { S3DX_DECLARE_VIN_19( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 19, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hObject, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12, const AIVariable& vParam13, const AIVariable& vParam14, const AIVariable& vParam15, const AIVariable& vParam16 ) const { S3DX_DECLARE_VIN_20( hObject, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12, vParam13, vParam14, vParam15, vParam16 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->object.sendEventImmediate ( 20, vIn, vOut ) ; return vOut ; }
         } ;
 
         struct PixelmapPackage
@@ -5621,6 +5684,10 @@ namespace S3DX
             inline void             drawRectangle                                       ( const AIVariable& hPixelMap, const AIVariable& x1, const AIVariable& y1, const AIVariable& x2, const AIVariable& y2 ) const { S3DX_DECLARE_VIN_05( hPixelMap, x1, y1, x2, y2 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.drawRectangle ( 5, vIn, NULL ) ; }
             inline AIVariable       saveToTexture                                       ( const AIVariable& hPixelMap, const AIVariable& sName ) const { S3DX_DECLARE_VIN_02( hPixelMap, sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.saveToTexture ( 2, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       getResourceHandle                                   ( const AIVariable& sName ) const { S3DX_DECLARE_VIN_01( sName ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.getResourceHandle ( 1, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       newInstance                                         ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.newInstance ( 0, NULL, &vOut ) ; return vOut ; }
+            inline AIVariable       newInstance                                         ( const AIVariable& nWidth, const AIVariable& nHeight ) const { S3DX_DECLARE_VIN_02( nWidth, nHeight ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.newInstance ( 2, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       newInstance                                         ( const AIVariable& nWidth, const AIVariable& nHeight, const AIVariable& kPixelFormat ) const { S3DX_DECLARE_VIN_03( nWidth, nHeight, kPixelFormat ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.newInstance ( 3, vIn, &vOut ) ; return vOut ; }
+            inline AIVariable       resize                                              ( const AIVariable& hPixelMap, const AIVariable& nWidth, const AIVariable& nHeight ) const { S3DX_DECLARE_VIN_03( hPixelMap, nWidth, nHeight ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->pixelmap.resize ( 3, vIn, &vOut ) ; return vOut ; }
         } ;
 
         struct ProjectorPackage
@@ -5643,7 +5710,7 @@ namespace S3DX
 
             // Functions
             //
-            inline void             setColor                                            ( const AIVariable& hObject, const AIVariable& nRed, const AIVariable& nGreen, const AIVariable& nBlue ) const { S3DX_DECLARE_VIN_04( hObject, nRed, nGreen, nBlue ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->projector.setColor ( 4, vIn, NULL ) ; } 
+            inline void             setColor                                            ( const AIVariable& hObject, const AIVariable& nRed, const AIVariable& nGreen, const AIVariable& nBlue ) const { S3DX_DECLARE_VIN_04( hObject, nRed, nGreen, nBlue ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->projector.setColor ( 4, vIn, NULL ) ; }
             inline AIVariables<3>   getColor                                            ( const AIVariable& hObject ) const { S3DX_DECLARE_VIN_01( hObject ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->projector.getColor ( 1, vIn, vOut ) ; return vOut ; }
             inline void             setOpacity                                          ( const AIVariable& hObject, const AIVariable& nOpacity ) const { S3DX_DECLARE_VIN_02( hObject, nOpacity ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->projector.setOpacity ( 2, vIn, NULL ) ; }
             inline AIVariable       getOpacity                                          ( const AIVariable& hObject ) const { S3DX_DECLARE_VIN_01( hObject ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->projector.getOpacity ( 1, vIn, &vOut ) ; return vOut ; }
@@ -6064,6 +6131,8 @@ namespace S3DX
             inline AIVariable       getTrailCount                                       ( const AIVariable& hObject ) const { S3DX_DECLARE_VIN_01( hObject ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.getTrailCount ( 1, vIn, &vOut ) ; return vOut ; }
             inline void             setTrailAnchor0At                                   ( const AIVariable& hObject, const AIVariable& nIndex, const AIVariable& x, const AIVariable& y, const AIVariable& z, const AIVariable& kSpace ) const { S3DX_DECLARE_VIN_06( hObject, nIndex, x, y, z, kSpace ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.setTrailAnchor0At ( 6, vIn, NULL ) ; }
             inline void             setTrailAnchor1At                                   ( const AIVariable& hObject, const AIVariable& nIndex, const AIVariable& x, const AIVariable& y, const AIVariable& z, const AIVariable& kSpace ) const { S3DX_DECLARE_VIN_06( hObject, nIndex, x, y, z, kSpace ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.setTrailAnchor1At ( 6, vIn, NULL ) ; }
+            inline void             setTrailOpacityAt                                   ( const AIVariable& hObject, const AIVariable& nIndex, const AIVariable& nOpacity ) const { S3DX_DECLARE_VIN_03( hObject, nIndex, nOpacity ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.setTrailOpacityAt ( 3, vIn, NULL ) ; }
+            inline AIVariable       getTrailOpacityAt                                   ( const AIVariable& hObject, const AIVariable& nIndex ) const { S3DX_DECLARE_VIN_02( hObject, nIndex ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.getTrailOpacityAt ( 2, vIn, &vOut ) ; return vOut ; }
             inline void             startTrailAt                                        ( const AIVariable& hObject, const AIVariable& nIndex ) const { S3DX_DECLARE_VIN_02( hObject, nIndex ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.startTrailAt ( 2, vIn, NULL ) ; }
             inline void             pauseTrailAt                                        ( const AIVariable& hObject, const AIVariable& nIndex ) const { S3DX_DECLARE_VIN_02( hObject, nIndex ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.pauseTrailAt ( 2, vIn, NULL ) ; }
             inline void             stopTrailAt                                         ( const AIVariable& hObject, const AIVariable& nIndex ) const { S3DX_DECLARE_VIN_02( hObject, nIndex ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->sfx.stopTrailAt ( 2, vIn, NULL ) ; }
@@ -6118,6 +6187,12 @@ namespace S3DX
             const AIVariable        kLockModeRead                               ; // 1.9.2.0
             const AIVariable        kLockModeWrite                              ; // 1.9.2.0
             const AIVariable        kLockModeReadWrite                          ; // 1.9.2.0
+            const AIVariable        kCurveStyleLine                             ; // 2.0.0.0
+            const AIVariable        kCurveStyleStrip                            ; // 2.0.0.0
+            const AIVariable        kCurveStyleOptionStripWidth                 ; // 2.0.0.0
+            const AIVariable        kCurveStyleOptionStripStrokeTexture         ; // 2.0.0.0
+            const AIVariable        kCurveStyleOptionStripStrokeTiling          ; // 2.0.0.0
+            const AIVariable        kCurveOptionOverlay                         ; // 2.0.0.0
 
             ShapePackage                                (    ):
             kCurveTypePolyLine                          (  0 ),
@@ -6136,7 +6211,13 @@ namespace S3DX
             kMeshOptionIgnoreShadowsWhenOutOfFrustum    ( 64 ),
             kLockModeRead                               (  1 ),
             kLockModeWrite                              (  2 ),
-            kLockModeReadWrite                          (  3 )
+            kLockModeReadWrite                          (  3 ),
+            kCurveStyleLine                             (  0 ),
+            kCurveStyleStrip                            (  1 ),
+            kCurveStyleOptionStripWidth                 (  0 ),
+            kCurveStyleOptionStripStrokeTexture         (  1 ),
+            kCurveStyleOptionStripStrokeTiling          (  2 ),
+            kCurveOptionOverlay                         (  0 )
             { }
 
             // Functions
@@ -6173,7 +6254,9 @@ namespace S3DX
             inline void             overrideMeshMaterialSpecular                            ( const AIVariable& hObject, const AIVariable& nRed, const AIVariable& nGreen, const AIVariable& nBlue, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_05( hObject, nRed, nGreen, nBlue, nFactor ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshMaterialSpecular ( 5, vIn, NULL ) ; }
             inline void             overrideMeshMaterialFresnel                             ( const AIVariable& hObject, const AIVariable& nRed, const AIVariable& nGreen, const AIVariable& nBlue, const AIVariable& nIntensity, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_06( hObject, nRed, nGreen, nBlue, nIntensity, nFactor ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshMaterialFresnel ( 6, vIn, NULL ) ; }
             inline void             overrideMeshSubsetMaterialEffectMap0                    ( const AIVariable& hObject, const AIVariable& nSubsetIndex, const AIVariable& sMapName, const AIVariable& kMapType ) const { S3DX_DECLARE_VIN_04( hObject, nSubsetIndex, sMapName, kMapType ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshSubsetMaterialEffectMap0 ( 4, vIn, NULL ) ; }
+            inline void             overrideMeshSubsetMaterialEffectMap0                    ( const AIVariable& hObject, const AIVariable& nSubsetIndex, const AIVariable& hResource ) const { S3DX_DECLARE_VIN_03( hObject, nSubsetIndex, hResource ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshSubsetMaterialEffectMap0 ( 3, vIn, NULL ) ; }
             inline void             overrideMeshMaterialEffectMap0                          ( const AIVariable& hObject, const AIVariable& sMapName, const AIVariable& kMapType ) const { S3DX_DECLARE_VIN_03( hObject, sMapName, kMapType ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshMaterialEffectMap0 ( 3, vIn, NULL ) ; }
+            inline void             overrideMeshMaterialEffectMap0                          ( const AIVariable& hObject, const AIVariable& hResource ) const { S3DX_DECLARE_VIN_02( hObject, hResource ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshMaterialEffectMap0 ( 2, vIn, NULL ) ; }
             inline void             overrideMeshSubsetMaterialEffectMap1                    ( const AIVariable& hObject, const AIVariable& nSubsetIndex, const AIVariable& sMapName, const AIVariable& kMapType ) const { S3DX_DECLARE_VIN_04( hObject, nSubsetIndex, sMapName, kMapType ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshSubsetMaterialEffectMap1 ( 4, vIn, NULL ) ; }
             inline void             overrideMeshMaterialEffectMap1                          ( const AIVariable& hObject, const AIVariable& sMapName, const AIVariable& kMapType ) const { S3DX_DECLARE_VIN_03( hObject, sMapName, kMapType ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshMaterialEffectMap1 ( 3, vIn, NULL ) ; }
             inline void             overrideMeshSubsetMaterialNormalMap                     ( const AIVariable& hObject, const AIVariable& nSubsetIndex, const AIVariable& sMapName, const AIVariable& kMapType ) const { S3DX_DECLARE_VIN_04( hObject, nSubsetIndex, sMapName, kMapType ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.overrideMeshSubsetMaterialNormalMap ( 4, vIn, NULL ) ; }
@@ -6247,6 +6330,12 @@ namespace S3DX
             inline void             setCurveEndOpacity                                      ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& nOpacity ) const { S3DX_DECLARE_VIN_03( hObject, nCurveIndex, nOpacity ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.setCurveEndOpacity ( 3, vIn, NULL ) ; }
             inline AIVariables<3>   getCurveStartColor                                      ( const AIVariable& hObject, const AIVariable& nCurveIndex ) const { S3DX_DECLARE_VIN_02( hObject, nCurveIndex ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveStartColor ( 2, vIn, vOut ) ; return vOut ; }
             inline AIVariables<3>   getCurveEndColor                                        ( const AIVariable& hObject, const AIVariable& nCurveIndex ) const { S3DX_DECLARE_VIN_02( hObject, nCurveIndex ) ; AIVariables<3> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveEndColor ( 2, vIn, vOut ) ; return vOut ; }
+            inline void             setCurveStyle                                           ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& kCurveStyle ) const { S3DX_DECLARE_VIN_03( hObject, nCurveIndex, kCurveStyle ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.setCurveStyle ( 3, vIn, NULL ) ; }
+            inline AIVariable       getCurveStyle                                           ( const AIVariable& hObject, const AIVariable& nCurveIndex ) const { S3DX_DECLARE_VIN_02( hObject, nCurveIndex ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveStyle ( 2, vIn, &vOut ) ; return vOut ; }
+            inline void             setCurveStyleOption                                     ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& kCurveStyleOption, const AIVariable& vOption ) const { S3DX_DECLARE_VIN_04( hObject, nCurveIndex, kCurveStyleOption, vOption ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.setCurveStyleOption ( 4, vIn, NULL ) ; }
+            inline AIVariable       getCurveStyleOption                                     ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& kCurveStyleOption ) const { S3DX_DECLARE_VIN_03( hObject, nCurveIndex, kCurveStyleOption ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveStyleOption ( 3, vIn, &vOut ) ; return vOut ; }
+            inline void             setCurveOption                                          ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& kCurveOption, const AIVariable& bEnable ) const { S3DX_DECLARE_VIN_04( hObject, nCurveIndex, kCurveOption, bEnable ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.setCurveOption ( 4, vIn, NULL ) ; }
+            inline AIVariable       getCurveOption                                          ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& kCurveOption ) const { S3DX_DECLARE_VIN_03( hObject, nCurveIndex, kCurveOption ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveOption ( 3, vIn, &vOut ) ; return vOut ; }
             inline AIVariables<7>   evaluateCurve                                           ( const AIVariable& hObject, const AIVariable& nCurveIndex, const AIVariable& nFactor ) const { S3DX_DECLARE_VIN_03( hObject, nCurveIndex, nFactor ) ; AIVariables<7> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.evaluateCurve ( 3, vIn, vOut ) ; return vOut ; }
             inline AIVariable       getCurveLength                                          ( const AIVariable& hObject, const AIVariable& nCurveIndex ) const { S3DX_DECLARE_VIN_02( hObject, nCurveIndex ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.getCurveLength ( 2, vIn, &vOut ) ; return vOut ; }
             inline void             setMeshOption                                           ( const AIVariable& hObject, const AIVariable& kOption, const AIVariable& bEnable ) const { S3DX_DECLARE_VIN_03( hObject, kOption, bEnable ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->shape.setMeshOption ( 3, vIn, NULL ) ; }
@@ -6316,7 +6405,7 @@ namespace S3DX
             inline AIVariable       decodeURL                                           ( const AIVariable& sString ) const { S3DX_DECLARE_VIN_01( sString ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.decodeURL ( 1, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       encodeBase64                                        ( const AIVariable& sString, const AIVariable& bHexadecimal ) const { S3DX_DECLARE_VIN_02( sString, bHexadecimal ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.encodeBase64 ( 2, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       encodeUTF8                                          ( const AIVariable& sString, const AIVariable& sFormat ) const { S3DX_DECLARE_VIN_02( sString, sFormat ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.encodeUTF8 ( 2, vIn, &vOut ) ; return vOut ; }
-            
+
             inline AIVariable       format                                              ( const AIVariable& sFormat ) const { S3DX_DECLARE_VIN_01( sFormat ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.format ( 1, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       format                                              ( const AIVariable& sFormat, const AIVariable& v0 ) const { S3DX_DECLARE_VIN_02( sFormat, v0 ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.format ( 2, vIn, &vOut ) ; return vOut ; }
             inline AIVariable       format                                              ( const AIVariable& sFormat, const AIVariable& v0, const AIVariable& v1 ) const { S3DX_DECLARE_VIN_03( sFormat, v0, v1 ) ; AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->string.format ( 3, vIn, &vOut ) ; return vOut ; }
@@ -6413,13 +6502,17 @@ namespace S3DX
             const AIVariable        kGPUCapabilityGammaFilterSupport                    ; // 1.9.2.0
             const AIVariable        kGPUCapabilityColorGradingFilterSupport             ; // 1.9.2.0
             const AIVariable        kOSTypeWinRT                                        ; // 1.9.2.0
+            const AIVariable        kOSTypeXboxOne                                      ; // 2.0.0.0
+            const AIVariable        kOSTypePS4                                          ; // 2.0.0.0
+            const AIVariable        kOSTypeHTML5                                        ; // 2.0.0.0
+            const AIVariable        kOSTypeAppleTV                                      ; // 2.0.0.0
 
             SystemPackage                                       (    ):
             kOSTypeLinux                                        (  4 ),
             kOSTypeMac                                          (  3 ),
             kOSTypeSymbian                                      (  6 ),
             kOSTypeWindows                                      (  1 ),
-            kOSTypeWindowsCE                                    (  2 ),
+            kOSTypeWindowsCE                                    (  2 ), // Deprecated
             kOSTypeIPhone                                       (  7 ),
             kOSTypeWii                                          (  8 ),
             kOSTypeAngstrom                                     (  9 ),
@@ -6494,7 +6587,11 @@ namespace S3DX
             kGPUCapabilityAmbientOcclusionFilterSupport         ( 18 ), // 1.9.1.1
             kGPUCapabilityGammaFilterSupport                    ( 19 ), // 1.9.2.0
             kGPUCapabilityColorGradingFilterSupport             ( 20 ), // 1.9.2.0
-            kOSTypeWinRT                                        ( 24 )  // 1.9.2.0
+            kOSTypeWinRT                                        ( 24 ), // 1.9.2.0
+            kOSTypeXboxOne                                      ( 25 ), // 2.0.0.0
+            kOSTypePS4                                          ( 26 ), // 2.0.0.0
+            kOSTypeHTML5                                        ( 27 ), // 2.0.0.0
+            kOSTypeAppleTV                                      ( 28 )  // 2.0.0.0
             { }
 
             // Functions
@@ -6585,7 +6682,7 @@ namespace S3DX
             inline AIVariables<32>  getRangeAt                                          ( const AIVariable& hTable, const AIVariable& nIndex, const AIVariable& nCount ) const { S3DX_DECLARE_VIN_03( hTable, nIndex, nCount ) ; AIVariables<32> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.getRangeAt ( 3, vIn, vOut ) ; return vOut ; }
             inline AIVariable       newInstance                                         ( ) const { AIVariable vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.newInstance ( 0, NULL, &vOut ) ; return vOut ; }
             inline void             copy                                                ( const AIVariable& hTable, const AIVariable& hTableToCopy ) const { S3DX_DECLARE_VIN_02( hTable, hTableToCopy ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.copy ( 2, vIn, NULL ) ; }
-            
+
             inline void             setRangeAt                                          ( const AIVariable& hTable, const AIVariable& nIndex, const AIVariable& vParam0 ) const { S3DX_DECLARE_VIN_03( hTable, nIndex, vParam0 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.setRangeAt ( 3, vIn, NULL ) ; }
             inline void             setRangeAt                                          ( const AIVariable& hTable, const AIVariable& nIndex, const AIVariable& vParam0, const AIVariable& vParam1 ) const { S3DX_DECLARE_VIN_04( hTable, nIndex, vParam0, vParam1 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.setRangeAt ( 4, vIn, NULL ) ; }
             inline void             setRangeAt                                          ( const AIVariable& hTable, const AIVariable& nIndex, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2 ) const { S3DX_DECLARE_VIN_05( hTable, nIndex, vParam0, vParam1, vParam2 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->table.setRangeAt ( 5, vIn, NULL ) ; }
@@ -6743,20 +6840,20 @@ namespace S3DX
             inline void             postEvent                                           ( const AIVariable& hUser, const AIVariable& nDelay, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10 ) const { S3DX_DECLARE_VIN_15( hUser, nDelay, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.postEvent ( 15, vIn, NULL ) ; }
             inline void             postEvent                                           ( const AIVariable& hUser, const AIVariable& nDelay, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11 ) const { S3DX_DECLARE_VIN_16( hUser, nDelay, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.postEvent ( 16, vIn, NULL ) ; }
 
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent ) const { S3DX_DECLARE_VIN_03( hUser, sAIModel, sEvent ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 3, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0 ) const { S3DX_DECLARE_VIN_04( hUser, sAIModel, sEvent, vParam0 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 4, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1 ) const { S3DX_DECLARE_VIN_05( hUser, sAIModel, sEvent, vParam0, vParam1 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 5, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2 ) const { S3DX_DECLARE_VIN_06( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 6, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3 ) const { S3DX_DECLARE_VIN_07( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 7, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4 ) const { S3DX_DECLARE_VIN_08( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 8, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5 ) const { S3DX_DECLARE_VIN_09( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 9, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6 ) const { S3DX_DECLARE_VIN_10( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 10, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7 ) const { S3DX_DECLARE_VIN_11( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 11, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8 ) const { S3DX_DECLARE_VIN_12( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 12, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9 ) const { S3DX_DECLARE_VIN_13( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 13, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10 ) const { S3DX_DECLARE_VIN_14( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 14, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11 ) const { S3DX_DECLARE_VIN_15( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 15, vIn, NULL ) ; }
-            inline void             sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12 ) const { S3DX_DECLARE_VIN_16( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12 ) ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 16, vIn, NULL ) ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent ) const { S3DX_DECLARE_VIN_03( hUser, sAIModel, sEvent ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 3, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0 ) const { S3DX_DECLARE_VIN_04( hUser, sAIModel, sEvent, vParam0 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 4, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1 ) const { S3DX_DECLARE_VIN_05( hUser, sAIModel, sEvent, vParam0, vParam1 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 5, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2 ) const { S3DX_DECLARE_VIN_06( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 6, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3 ) const { S3DX_DECLARE_VIN_07( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 7, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4 ) const { S3DX_DECLARE_VIN_08( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 8, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5 ) const { S3DX_DECLARE_VIN_09( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 9, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6 ) const { S3DX_DECLARE_VIN_10( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 10, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7 ) const { S3DX_DECLARE_VIN_11( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 11, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8 ) const { S3DX_DECLARE_VIN_12( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 12, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9 ) const { S3DX_DECLARE_VIN_13( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 13, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10 ) const { S3DX_DECLARE_VIN_14( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 14, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11 ) const { S3DX_DECLARE_VIN_15( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 15, vIn, vOut ) ; return vOut ; }
+            inline AIVariables<8>   sendEventImmediate                                  ( const AIVariable& hUser, const AIVariable& sAIModel, const AIVariable& sEvent, const AIVariable& vParam0, const AIVariable& vParam1, const AIVariable& vParam2, const AIVariable& vParam3, const AIVariable& vParam4, const AIVariable& vParam5, const AIVariable& vParam6, const AIVariable& vParam7, const AIVariable& vParam8, const AIVariable& vParam9, const AIVariable& vParam10, const AIVariable& vParam11, const AIVariable& vParam12 ) const { S3DX_DECLARE_VIN_16( hUser, sAIModel, sEvent, vParam0, vParam1, vParam2, vParam3, vParam4, vParam5, vParam6, vParam7, vParam8, vParam9, vParam10, vParam11, vParam12 ) ; AIVariables<8> vOut ; S3DX_MODULE_GUID::__pS3DXEAPIMI->user.sendEventImmediate ( 16, vIn, vOut ) ; return vOut ; }
         } ;
 
         struct VideoPackage
@@ -6823,7 +6920,7 @@ namespace S3DX
         } ;
 
         //---------------------------------------------------------------------
-        //  Variables 
+        //  Variables
         //
         AnimationCallbacks          animation       ;
         ApplicationCallbacks        application     ;
@@ -6909,10 +7006,10 @@ namespace S3DX
 }
 
 //-----------------------------------------------------------------------------
-// Do *not* make a switch case as it will behave strangely on Xbox 360 with 
+// Do *not* make a switch case as it will behave strangely on Xbox 360 with
 // LTCG and/or fastcode activated (did not test all combinations).
 //
-// WARNING: there is a "return" statement to speed up escapes, so take it into 
+// WARNING: there is a "return" statement to speed up escapes, so take it into
 // account when using this macro.
 //
 #define S3DX_REGISTER_AIENGINEAPI_CALLBACK( __iCallbackID, __pCallback )                                                                                                                                  \
@@ -7039,6 +7136,7 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_application_quit                                                       ) { application.quit                                                  = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_application_mightBeCracked                                             ) { application.mightBeCracked                                        = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_application_flushAIEvents                                              ) { application.flushAIEvents                                         = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_application_getOffscreenRenderingSurfaceNativeHandle                   ) { application.getOffscreenRenderingSurfaceNativeHandle              = __pCallback ; return ; } \
                                                                                                                                                                                                                       \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_cache_addFile                                                          ) { cache.addFile                                                     = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_cache_addStreamFile                                                    ) { cache.addStreamFile                                               = __pCallback ; return ; } \
@@ -7707,6 +7805,11 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_setSubsetVertexNormals                                            ) { mesh.setSubsetVertexNormals                                       = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_setSubsetVertexTexCoords                                          ) { mesh.setSubsetVertexTexCoords                                     = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_setSubsetBoundingBox                                              ) { mesh.setSubsetBoundingBox                                         = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_sortSubsetIndexBuffersFromAxis                                    ) { mesh.sortSubsetIndexBuffersFromAxis                               = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_setSubsetValidIndexCount                                          ) { mesh.setSubsetValidIndexCount                                     = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_getSubsetValidIndexCount                                          ) { mesh.getSubsetValidIndexCount                                     = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_resizeSubsetVertexBuffer                                          ) { mesh.resizeSubsetVertexBuffer                                     = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_mesh_resizeSubsetIndexBuffer                                           ) { mesh.resizeSubsetIndexBuffer                                      = __pCallback ; return ; } \
                                                                                                                                                                                                             \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_microphone_setRate                                                     ) { microphone.setRate                                                = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_microphone_enable                                                      ) { microphone.enable                                                 = __pCallback ; return ; } \
@@ -7892,6 +7995,8 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_pixelmap_drawLine                                                      ) { pixelmap.drawLine                                                 = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_pixelmap_drawRectangle                                                 ) { pixelmap.drawRectangle                                            = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_pixelmap_saveToTexture                                                 ) { pixelmap.saveToTexture                                            = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_pixelmap_newInstance                                                   ) { pixelmap.newInstance                                              = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_pixelmap_resize                                                        ) { pixelmap.resize                                                   = __pCallback ; return ; } \
                                                                                                                                                                                                             \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_projector_setColor                                                     ) { projector.setColor                                                = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_projector_getColor                                                     ) { projector.getColor                                                = __pCallback ; return ; } \
@@ -8177,6 +8282,8 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_getTrailCount                                                      ) { sfx.getTrailCount                                                 = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_setTrailAnchor0At                                                  ) { sfx.setTrailAnchor0At                                             = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_setTrailAnchor1At                                                  ) { sfx.setTrailAnchor1At                                             = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_setTrailOpacityAt                                                  ) { sfx.setTrailOpacityAt                                             = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_getTrailOpacityAt                                                  ) { sfx.getTrailOpacityAt                                             = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_startTrailAt                                                       ) { sfx.startTrailAt                                                  = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_pauseTrailAt                                                       ) { sfx.pauseTrailAt                                                  = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_sfx_stopTrailAt                                                        ) { sfx.stopTrailAt                                                   = __pCallback ; return ; } \
@@ -8314,6 +8421,12 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_setCurveEndOpacity                                               ) { shape.setCurveEndOpacity                                          = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveStartColor                                               ) { shape.getCurveStartColor                                          = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveEndColor                                                 ) { shape.getCurveEndColor                                            = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_setCurveStyle                                                    ) { shape.setCurveStyle                                               = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveStyle                                                    ) { shape.getCurveStyle                                               = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_setCurveStyleOption                                              ) { shape.setCurveStyleOption                                         = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveStyleOption                                              ) { shape.getCurveStyleOption                                         = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_setCurveOption                                                   ) { shape.setCurveOption                                              = __pCallback ; return ; } \
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveOption                                                   ) { shape.getCurveOption                                              = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_evaluateCurve                                                    ) { shape.evaluateCurve                                               = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_getCurveLength                                                   ) { shape.getCurveLength                                              = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_shape_setMeshOption                                                    ) { shape.setMeshOption                                               = __pCallback ; return ; } \
@@ -8556,8 +8669,8 @@ namespace S3DX
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_xml_getSendStatus                                                      ) { xml.getSendStatus                                                 = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_xml_getReceiveStatus                                                   ) { xml.getReceiveStatus                                              = __pCallback ; return ; } \
     if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_xml_newInstance                                                        ) { xml.newInstance                                                   = __pCallback ; return ; } \
-    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_xml_copy                                                               ) { xml.copy                                                          = __pCallback ; return ; } 
-        
+    if ( __iCallbackID == S3DX::AIEngineAPI::CallbackID_xml_copy                                                               ) { xml.copy                                                          = __pCallback ; return ; }
+
 //-----------------------------------------------------------------------------
 #define S3DX_DECLARE_AIENGINEAPI( )                                                                         \
                                                                                                             \
@@ -8606,7 +8719,7 @@ namespace S3DX
     S3DX::AIEngineAPI::TablePackage       S3DX::table           ;                                               \
     S3DX::AIEngineAPI::UserPackage        S3DX::user            ;                                               \
     S3DX::AIEngineAPI::VideoPackage       S3DX::video           ;                                               \
-    S3DX::AIEngineAPI::XmlPackage         S3DX::xml             ;                                   
+    S3DX::AIEngineAPI::XmlPackage         S3DX::xml             ;
 //-----------------------------------------------------------------------------
 #if (defined S3DX_DLL) || (defined S3DX_DISCRETE_AIENGINEAPI_PACKAGES)
     #define S3DX_IMPLEMENT_AIENGINEAPI( _name_ )                                                                \
@@ -8642,7 +8755,7 @@ namespace S3DX
         S3DX::AIEngineAPI *_name_::GetAIEngineAPI ( )                                                           \
         {                                                                                                       \
             return &__oEngineAPI ;                                                                              \
-        }                                                                                                       
+        }
 #endif
 //-----------------------------------------------------------------------------
 #endif

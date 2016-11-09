@@ -18,7 +18,10 @@ namespace S3DX
     typedef unsigned int        uint32  ;
     typedef          float      float32 ;
     //-------------------------------------------------------------------------
-#if S3DX_ARCH_LP64
+#if (defined _XBOX_ONE)
+    typedef signed   __int64    int64   ;
+    typedef unsigned __int64    uint64  ;
+#elif S3DX_ARCH_LP64
     typedef signed   long       int64   ;
     typedef unsigned long       uint64  ;
 #elif (defined _WIN32)

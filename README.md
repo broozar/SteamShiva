@@ -2,18 +2,17 @@
 
 ## Details ##
 This is a plugin to integrate the Steamworks SDK into the Shiva 3D game engine. Right now this is built with:
-* Steamworks 1.35
+* Steamworks 1.38a
 * Shiva 1.9.2
 
 ## Credits ##
 This plugin was started as a joint effort between Shaderman and error454. error454 now maintains it and uses it in Rage Runner.
-The last error454 version was 1.29, versions 1.34 and 1.35 were compiled by broozar from ShiVaTechnologies SAS.
+The last error454 version was 1.29, current version is compiled with Steamworks SDK 1.38a using VS2015
 DLC addition by Tuomas Karmakallio.
 Steam Controller addition by Felix Caffier.
 
 
 # Basic Configuration #
-0. Copy the steam_api(64).dll/(dylib/so) to the root of your project directory. This has to be done after exporting your game project as well.
 1. Add the file **steam_appid.txt** to the folder where your shiva editor executable is. In the file, put your steam app ID, or **480** if you want to run in test mode. 480 is the appID of "Spacewar", the Steam SDK test project.
 2. Add the Steam AI as a user AI.
 3. Add the Steam plugin to your project.
@@ -205,20 +204,3 @@ If you need to know whether the Steam overlay is active you can call:
 
     Steam.overlayActive ( )
 
-	
-Platform Packaging Caveats
-=====
-
-Linux
-----
-You will need to package the `libsteam_api.so` file that is in `Plugins\com.shaderman.steamworks\Contents\Linux` with your game.
-The easiest way to do this is to place the file in a `libs/` folder in your game root and then set the `LD_LIBRARY_PATH` in a bash script before launching:
-
-    #!/bin/bash
-    #Set library path to find libsteam_api.so
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:./libs
-
-    #Launch our game
-    ./mygame
-	
-This plugin has only be compiled for Linux 64bit, which covers most recent machines, including SteamOS. The plugin will not work with the 32bit version of the ShiVa linux engine.

@@ -21,6 +21,8 @@
 #if (defined _WIN32)
 extern "C"  _CRTIMP double  strtod  ( const char *, char ** ) ;
 #define                     S3DX_STRTOF  (float)strtod
+#elif (defined __HTML5__)
+extern  "C" float   strtof  ( const char *__restrict, char **__restrict) ;
 #elif (defined ANDROID_NDK)
 extern "C"          double  strtod  ( const char *, char ** ) ;
 #define                     S3DX_STRTOF  (float)strtod
@@ -46,7 +48,7 @@ inline bool __streq ( const char *_p1, const char *_p2 )
 
 #if (defined __CWCC__)
 #   define S3DX_API __declspec(force_export)
-#elif (defined _WIN32) || (defined __CYGWIN__) || (defined __WINRT__)
+#elif (defined _WIN32) || (defined __CYGWIN__) || (defined __WINRT__) || (defined _XBOX_ONE)
 #   if (defined S3DX_EXPORTS) || (defined S3DX_DLL)
 #       define S3DX_API __declspec(dllexport)
 #   else
@@ -60,7 +62,7 @@ inline bool __streq ( const char *_p1, const char *_p2 )
 #   endif
 #endif
 
-#if (__LP64__) || (defined _WIN64) || (defined _M_IA64) || (defined __ia64__) || (defined _M_AMD64) || (defined __x86_64__)
+#if (__LP64__) || (defined _WIN64) || (defined _M_IA64) || (defined __ia64__) || (defined _M_AMD64) || (defined _M_X64) || (defined __x86_64__) || (defined _XBOX_ONE)
 #   define S3DX_ARCH_LP64   1
 #   define S3DX_ARCH_ILP32  0
 #else
