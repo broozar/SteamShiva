@@ -3,7 +3,7 @@
 ## Details ##
 This is a plugin to integrate the Steamworks SDK into the Shiva 3D game engine. Right now this is built with:
 * Steamworks 1.38a
-* Shiva 1.9.2
+* Shiva 2.0 beta 7
 
 ## Credits ##
 This plugin was started as a joint effort between Shaderman and error454. error454 now maintains it and uses it in Rage Runner.
