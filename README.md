@@ -229,3 +229,5 @@ Distribution:
 
 - after game is exported: open the "data" folder of the exported game and copy Plugins\com.shaderman.steamworks\Frameworks\Linux\x86_64\lib\libsteam_api.so into the folder
 - also create a file named "steam_appid.txt", containing only the number of your game's steam app ID (example game: 480), in the data folder
+
+![Linux distro files](http://somepic.someserver.de/pics/big/9d13374697ec650be2b5d8fc3ed2543c.png "Linux export files")
