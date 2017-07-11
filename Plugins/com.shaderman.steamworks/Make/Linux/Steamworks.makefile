@@ -2,7 +2,7 @@
 #   ShiVa Extension Plugin Makefile for Linux
 #################################################################
 
-#TARGET_ARCH			= X86_64 #TARGET_ARCH should be passed as command line argument
+# TARGET_ARCH			= X86_64 #TARGET_ARCH should be passed as command line argument
 #################################################################
 ifeq ($(TARGET_ARCH), X86_32)
     ARCH_PREFIX                 = x86_32
@@ -52,10 +52,10 @@ ifeq ($(TARGET_ARCH), X86_64)
 endif
 
 INCLUDES			= -I"$(SRCROOT)" -I$(SRCROOT)/Platforms/Linux -I../../Sources/S3DX -I../../Frameworks/Linux/include -I../../Sources/steam
-CFLAGS_Common		= -Os -Wno-unknown-pragmas -fsigned-char -fno-exceptions -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -std=c++11 -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H
+CFLAGS_Common		= -Os -Wno-unknown-pragmas -fsigned-char -fno-exceptions -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H
 CFLAGS      		= $(ARCH_FLAGS) $(CFLAGS_Common) $(INCLUDES)
-CPPFLAGS    		= 
-LDFLAGS    			= $(ARCH_FLAGS) $(ARCH_LIBS)
+CPPFLAGS    		= -std=c++11
+LDFLAGS    			= $(ARCH_FLAGS) $(ARCH_LIBS) -lsteam_api
 
 ####################################################################
 #  Objects

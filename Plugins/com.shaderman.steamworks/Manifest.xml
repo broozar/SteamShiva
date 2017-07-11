@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest version="2" >
-	<plugin name="Steamworks" version="1.38a" s3dx_sdk_version="0x2000000" >
+	<plugin name="Steamworks" version="1.40" s3dx_sdk_version="0x2000000" >
 		<info>
 			<description>Steamworks for ShiVa 2.0</description>
 			<author>

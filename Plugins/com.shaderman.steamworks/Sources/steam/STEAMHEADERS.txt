@@ -1,0 +1,2 @@
+copy here: header files from SteamWorks SDK
+sdk\public\steam

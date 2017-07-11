@@ -1,13 +1,14 @@
 # SteamWorks Plugin README #
+2017-07-11
 
 ## Details ##
 This is a plugin to integrate the Steamworks SDK into the Shiva 3D game engine. Right now this is built with:
-* Steamworks 1.38a
-* Shiva 2.0 beta 7
+* Steamworks 1.40
+* Shiva 2.0 beta 8+
 
 ## Credits ##
-This plugin was started as a joint effort between Shaderman and error454. error454 now maintains it and uses it in Rage Runner.
-The last error454 version was 1.29, current version is compiled with Steamworks SDK 1.38a using VS2015
+This plugin was started as a joint effort between Shaderman and error454. The last error454 version was 1.29.
+The current version is compiled with Steamworks SDK 1.40.
 DLC addition by Tuomas Karmakallio.
 Steam Controller addition by Felix Caffier.
 
@@ -19,14 +20,12 @@ Steam Controller addition by Felix Caffier.
 4. Edit the `statsInit` function and insert all of the stat names/types for your game.
 5. Edit the `achievementsInit` function and add all your achievement identifiers.
 
-
-# Debug Mode #
+## Debug Mode ##
 If you want to run in debug mode, set the `bDebug` variable to true.
 
 
 # Usage #
 When the Steam SDK initializes, it automatically grabs the stats and achievements for the current user. When those are available, `onUserStatsReceived` will be called. This callback will only be called once, after which you can interact with Stats and Achievements.
-
 
 ## Stats ##
 
@@ -120,7 +119,8 @@ user.sendEventImmediate ( hUser, "Steam", "onDlcItemConfirmation", "123456", "my
 Note that a user may switch Dlc on and off in their game control panel in Steam, so the status should always be checked on launch.
 
 
-# Controller Setup #
+# Steam Controller Setup #
+
 ## Steam pre-config ##
 0. Read https://partner.steamgames.com/documentation/steamcontroller
 1. Create an In-Game Actions file according to above in-game specifications, or use the game_actions_example.vdf Portal 2 example file. -- Important: If you want to test it first with the default demo game "SpaceWar" (ID 480), do NOT make a game_actions_480.vdf.
@@ -204,3 +204,28 @@ If you need to know whether the Steam overlay is active you can call:
 
     Steam.overlayActive ( )
 
+
+# Building and Distribution #
+
+If you plan to re-build or fork the plugin, please consult Docs\BUILD.TXT
+
+## Windows ##
+- open the plugion sln file in VS2015 or later
+- build as RELEASE in 32 and 64 bit
+- all necessary DLLs will be copied to the plugin Contents directory, and you are good to go.
+
+## Mac OS X ##
+- not supported at this point
+
+## Linux ##
+
+Building:
+
+- do not build inside ShiVa 2.0 as this will change the custom makefile!
+- instead use the command line: "make TARGET_ARCH=X86_64 -f /path/to/Plugins/com.shaderman.steamworks/Make/Linux/Steamworks.makefile"
+- change TARGET_ARCH variable if you need a 32bit build
+
+Distribution:
+
+- after game is exported: open the "data" folder of the exported game and copy Plugins\com.shaderman.steamworks\Frameworks\Linux\x86_64\lib\libsteam_api.so into the folder
+- also create a file named "steam_appid.txt", containing only the number of your game's steam app ID (example game: 480), in the data folder

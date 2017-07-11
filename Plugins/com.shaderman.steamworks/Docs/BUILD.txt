@@ -1,22 +1,16 @@
 - Get the Steamworks SDK from https://partner.steamgames.com
-- Extract the content into the Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK folder
+- Extract the content sdk\public\steaminto into Plugins\com.shaderman.steamworks\Sources\steam
 
-Windows:
-- open the plugion sln file in VS2015
+Windows 32/64:
+- open the plugion sln file in VS2015 or later
 - build as RELEASE in 32 and 64 bit
 
-Linux:
-- build using the gear icon inside ShiVa 2.0
-- if you have multilib or ia32 installed, ShiVa will detect it and make both 32 and 64bit libraries
-- direct makefile build not recommended
+Linux 64:
+- do not build inside ShiVa 2.0 as this will change the custom makefile!
+- command line: make TARGET_ARCH=X86_64 -f /path/to/Plugins/com.shaderman.steamworks/Make/Linux/Steamworks.makefile
+- change TARGET_ARCH variable if you need a 32bit build
+- after game is exported: open the "data" folder of the exported game and copy Plugins\com.shaderman.steamworks\Frameworks\Linux\x86_64\lib\libsteam_api.so into the folder
+- also create a file named "steam_appid.txt", containing only the number of your game's steam app ID (example game: 480), in the data folder
 
-Mac 32 bit:
-- CURRENTLY NOT UPDATED OLD INFO FOLLOWING
-- Do not use the "Generate X-code project" option in the editor, this will destroy the correctly configured project file.
-- Copy the com.shaderman.steamworks folder to Mac and open the xcode project in Make\Mac folder
-- Build for 32-bit
-- The result will be a newly built library: Contents\Mac\Steamworks_Mac.dylib
-- In Shiva windows, in the mac section of the plugin, import the plugin binary and select the dylib that was generated.
-- Now you can export the project for Mac
-- If you are testing on the Mac and not through steam, after you build the project in the UAT, you'll need to create a steam_appid.txt in the program [Name].App/Contents/MacOS/ folder
-
+Mac 32:
+- support removed
