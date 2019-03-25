@@ -1,14 +1,13 @@
 # SteamWorks Plugin README #
-2017-07-11
+2019-03-25
 
 ## Details ##
 This is a plugin to integrate the Steamworks SDK into the Shiva 3D game engine. Right now this is built with:
-* Steamworks 1.40
-* Shiva 2.0 beta 8+
+* Steamworks 1.44
+* Shiva 2.0 DR FEB-2019
 
 ## Credits ##
-This plugin was started as a joint effort between Shaderman and error454. The last error454 version was 1.29.
-The current version is compiled with Steamworks SDK 1.40.
+This plugin was started as a joint effort between Shaderman and error454. The last error454 version was 1.29. Current store packages are compiled and maintained by broozar.
 DLC addition by Tuomas Karmakallio.
 Steam Controller addition by Felix Caffier.
 
@@ -206,28 +205,10 @@ If you need to know whether the Steam overlay is active you can call:
 
 
 # Building and Distribution #
-
 If you plan to re-build or fork the plugin, please consult Docs\BUILD.TXT
 
-## Windows ##
-- open the plugion sln file in VS2015 or later
-- build as RELEASE in 32 and 64 bit
-- all necessary DLLs will be copied to the plugin Contents directory, and you are good to go.
+Linux Distribution: After game is exported, open the "data" folder of the exported game and copy Plugins\com.shaderman.steamworks\Frameworks\Linux\x86_64\lib\libsteam_api.so into the folder.
 
-## Mac OS X ##
-- not supported at this point
-
-## Linux ##
-
-Building:
-
-- do not build inside ShiVa 2.0 as this will change the custom makefile!
-- instead use the command line: "make TARGET_ARCH=X86_64 -f /path/to/Plugins/com.shaderman.steamworks/Make/Linux/Steamworks.makefile"
-- change TARGET_ARCH variable if you need a 32bit build
-
-Distribution:
-
-- after game is exported: open the "data" folder of the exported game and copy Plugins\com.shaderman.steamworks\Frameworks\Linux\x86_64\lib\libsteam_api.so into the folder
-- also create a file named "steam_appid.txt", containing only the number of your game's steam app ID (example game: 480), in the data folder
+Steam AppID: You need to create a file named "steam_appid.txt", containing only the number of your game's steam app ID (example game: 480), in the data folder.
 
 ![Linux distro files](http://somepic.someserver.de/pics/big/9d13374697ec650be2b5d8fc3ed2543c.png "Linux export files")
