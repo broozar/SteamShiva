@@ -44,14 +44,14 @@ LD					= $(CPP)
 
 ifeq ($(TARGET_ARCH), X86_32)
     ARCH_FLAGS      			= -m32 -msse -D__x86_32__
-    ARCH_LIBS       			= -L../../Frameworks/Linux/$(ARCH_PREFIX)/lib
+    ARCH_LIBS       			= -L../../Frameworks/Linux/$(ARCH_PREFIX)
 endif
 ifeq ($(TARGET_ARCH), X86_64)
     ARCH_FLAGS      			= -m64 -fPIC -D__x86_64__ 
-    ARCH_LIBS       			= -L../../Frameworks/Linux/$(ARCH_PREFIX)/lib
+    ARCH_LIBS       			= -L../../Frameworks/Linux/$(ARCH_PREFIX)
 endif
 
-INCLUDES			= -I"$(SRCROOT)" -I$(SRCROOT)/Platforms/Linux -I../../Sources/S3DX -I../../Frameworks/Linux/include -I../../Sources/steam
+INCLUDES			= -I"$(SRCROOT)" -I$(SRCROOT)/Platforms/Linux -I../../Sources/S3DX -I../../Sources/steam
 CFLAGS_Common		= -Os -Wno-unknown-pragmas -fsigned-char -fno-exceptions -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H
 CFLAGS      		= $(ARCH_FLAGS) $(CFLAGS_Common) $(INCLUDES)
 CPPFLAGS    		= -std=c++11
@@ -86,7 +86,7 @@ $(TEMP_DIR)/%.o: $(SRCROOT)/%.cpp
 #  Targets
 #
 all: $(PRODUCT_ABS) 
-	@cp -rp $(FRAMEWORKSROOT)/$(ARCH_PREFIX)/bin/. $(BUILT_PRODUCTS_DIR)
+	@cp -rp $(FRAMEWORKSROOT)/$(ARCH_PREFIX)/. $(BUILT_PRODUCTS_DIR)
 	@echo Done.
 
 $(PRODUCT_ABS): $(OBJECTS_ABS)
